@@ -30,6 +30,18 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                     url:  'http://is3500termproject.wiki.zoho.com'
                 },
                 {
+                    name: 'CS3600 - Systems and Networks',
+                    date: '2014',
+                    desc: 'Coming Soon!',
+                    url:  'https://github.com/mrodrig/cs3600'
+                },
+                {
+                    name: 'CS4800 - Algorithms and Data',
+                    date: '2014',
+                    desc: 'This Programming Assignment basically required us to determine the optimal employees to influence in a company hierarchy such that the overall influence obtained is maximized.  I received a 92/100 on this assignment, while the class average was 76.44/100 and the median was 87/100.',
+                    url:  'http://github.com/mrodrig/cs4800'
+                },
+                {
                     name: 'IS4300 - Human-Computer Interaction',
                     date: '2013',
                     desc: 'Human-Computer Interaction Course Assignments and Projects',
