@@ -32,7 +32,7 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                 {
                     name: 'CS3600 - Systems and Networks',
                     date: '2014',
-                    desc: 'Coming Soon!',
+                    desc: 'This is the GitHub repository that my partner and I used to complete the four programming projects for our CS3600 class.',
                     url:  'https://github.com/mrodrig/cs3600'
                 },
                 {
