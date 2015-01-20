@@ -16,6 +16,13 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                     desc: 'I wrote a node module that can convert JSON documents into CSV as well as CSV back to an array of JSON documents. I was inspired to write this due to a project requirement at MITRE that I could not find a good solution for. One of the key features that we needed was to be able to convert JSON documents that had nested documents. Existing modules did not support that functionality, and I wanted to avoid changing our data schema. In my spare time, I developed this module which allows us to easily convert our existing schema into a nicely formatted CSV output. I am hoping to continue to add more functionality to this module and possibly create additional node modules in the future.',
                     url : 'https://github.com/mrodrig/json-2-csv',
                     html: '<img src="https://david-dm.org/mrodrig/json-2-csv.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/json-2-csv.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/json-2-csv.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
+                },
+                {
+                    name: 'Node Module: tag-cloud',
+                    date: 'January 2015 - Present',
+                    desc: 'I wrote a node module that can generate the necessary HTML to create tag clouds which have become increasingly popular.  At the time of creation, there were very few other modules, if any, that provide the same functionality and even fewer which provide the same options.  I developed this module after work in order to fulfill a need for a project I was working on during my third Co-op.',
+                    url : 'https://github.com/mrodrig/tag-cloud',
+                    html: '<img src="https://david-dm.org/mrodrig/tag-cloud.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/tag-cloud.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/tag-cloud.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
                 }
             ]
         },
