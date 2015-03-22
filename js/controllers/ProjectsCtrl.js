@@ -23,6 +23,13 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                     desc: 'I wrote a node module that can generate the necessary HTML to create tag clouds which have become increasingly popular.  At the time of creation, there were very few other modules, if any, that provide the same functionality and even fewer which provide the same options.  I developed this module after work in order to fulfill a need for a project I was working on during my third Co-op.',
                     url : 'https://github.com/mrodrig/tag-cloud',
                     html: '<img src="https://david-dm.org/mrodrig/tag-cloud.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/tag-cloud.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/tag-cloud.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
+                },
+                {
+                    name: 'Node Module: memo-cache',
+                    date: 'March 2015 - Present',
+                    desc: 'After hearing and experiencing some of the pain points of the current caching modules for NodeJS, I decided to create my own.  This module combines both caching and memoization into one module, which is surprisingly rare considering memoization relies heavily on a caching implementation.  When programming this, I decided to complete the caching library first, which would allow me to base my memoization functionality off of the caching library that I implemented.  This library also implements a least recently used (LRU) algorithm and allows for multiple \'named\' caches inside the same module.',
+                    url : 'https://github.com/mrodrig/memo-cache',
+                    html: '<img src="https://david-dm.org/mrodrig/memo-cache.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/memo-cache.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/memo-cache.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
                 }
             ]
         },
