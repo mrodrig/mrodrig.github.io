@@ -33,7 +33,7 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                 },
                 {
                     name: 'Node Module: doc-path',
-                    date: 'April 2014 - Present',
+                    date: 'April 2015 - Present',
                     desc: 'I abstracted this part of my json-2-csv module out and eventually decided to spin it off as a separate node module since it was something that I found I was re-writing multiple times.',
                     url : 'https://github.com/mrodrig/doc-path',
                     html: '<img src="https://david-dm.org/mrodrig/doc-path.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/doc-path.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/doc-path.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
