@@ -30,6 +30,13 @@ ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
                     desc: 'After hearing and experiencing some of the pain points of the current caching modules for NodeJS, I decided to create my own.  This module combines both caching and memoization into one module, which is surprisingly rare considering memoization relies heavily on a caching implementation.  When programming this, I decided to complete the caching library first, which would allow me to base my memoization functionality off of the caching library that I implemented.  This library also implements a least recently used (LRU) algorithm and allows for multiple \'named\' caches inside the same module.',
                     url : 'https://github.com/mrodrig/memo-cache',
                     html: '<img src="https://david-dm.org/mrodrig/memo-cache.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/memo-cache.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/memo-cache.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
+                },
+                {
+                    name: 'Node Module: doc-path',
+                    date: 'April 2014 - Present',
+                    desc: 'I abstracted this part of my json-2-csv module out and eventually decided to spin it off as a separate node module since it was something that I found I was re-writing multiple times.',
+                    url : 'https://github.com/mrodrig/doc-path',
+                    html: '<img src="https://david-dm.org/mrodrig/doc-path.png" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/doc-path.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/doc-path.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
                 }
             ]
         },
