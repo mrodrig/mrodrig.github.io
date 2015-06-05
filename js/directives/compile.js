@@ -1,4 +1,4 @@
-ccisApp.directive('compile', function ($compile) {
+angular.module('ccisApp').directive('compile', function ($compile) {
   return {
     restrict: 'A',
     replace: true,

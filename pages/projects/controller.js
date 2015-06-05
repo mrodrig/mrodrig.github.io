@@ -1,4 +1,6 @@
-ccisApp.controller('ProjectsCtrl', ['$scope', function($scope) {
+'use strict';
+
+angular.module('projectsPage').controller('ProjectsCtrl', ['$scope', function($scope) {
     $scope.projects = [
         {
             index: 'Current',

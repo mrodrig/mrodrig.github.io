@@ -1,4 +1,6 @@
-ccisApp.controller('HomeCtrl', ['$scope', function($scope) {
+'use strict';
+
+angular.module('homePage').controller('HomePageController', ['$scope', function($scope) {
     $scope.nextPosition = {
         start: 'January 2015',
         end: 'June 2015',
