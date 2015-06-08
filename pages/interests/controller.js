@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('interestsPage').controller('InterestsCtrl', ['$scope', function($scope) {
+angular.module('interestsPage').controller('InterestsPageController', ['$scope', function($scope) {
 
 }]);

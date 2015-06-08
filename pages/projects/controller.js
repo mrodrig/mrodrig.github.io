@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('projectsPage').controller('ProjectsCtrl', ['$scope', function($scope) {
+angular.module('projectsPage').controller('ProjectsPageController', ['$scope', function($scope) {
     $scope.projects = [
         {
             index: 'Current',

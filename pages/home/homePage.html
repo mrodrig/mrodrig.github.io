@@ -1,10 +1,21 @@
+<style>
+    #menu > ul > li:nth-child(1) > a {
+        background: #FFFFFF;
+        color: #F44C31;
+    }
+    #menu > ul > li:nth-child(1) > a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+
 <div id="page-bgtop">
     <div id="page-bgbtm">
         <div id="content">
             <div class="post">
                 <h2 class="title">Welcome</h2>
                 <div class="entry">
-                    <p>Hi, I am currently an Undergraduate at Northeastern University in Boston, Massachusetts.  As of right now, I am working on completing my sixth semester here.  Some of the classes that I have already completed or am currently enrolled in include the following:</p>
+                    <p>Hi, I am currently an Undergraduate at Northeastern University in Boston, Massachusetts. Some of the classes that I have already completed or am currently enrolled in include the following:</p>
                     <ul>
                         <li ng-repeat="course in courses">{{course}}</li>
                     </ul>
@@ -19,7 +30,7 @@
             <ul>
                 <li>
                     <h2>Co-op Availability/Status</h2>
-                    <p>Next Co-op: {{nextPosition.start}} - {{nextPosition.end}}</p>
+                    <p>Graduation Date: {{graduation.date | date:'MMMM, yyyy'}}</p>
                     <p ng-repeat="position in positions">{{position.index}} Co-op: {{position.title}} at <a ng-href="{{position.url}}">{{position.company}}</a>, {{position.location}}.</p>
                 </li>
                 <li>

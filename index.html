@@ -5,38 +5,36 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <base href="/outernet/"/>
     <title>Michael Rodrigues</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
-    <style>
-        #menu > ul > li:nth-child(1) > a {
-            background: #FFFFFF;
-            color: #F44C31;
-        }
-        #menu > ul > li:nth-child(1) > a:hover {
-            text-decoration: none;
-            color: #000;
-        }
-    </style>
 </head>
 <body>
 <div id="wrapper">
-    <div id="header-include" ng-include="'partials/header.html'"></div>
-    <div id="menu-include" ng-include="'partials/menu.html'"></div>
+    <div id="header-include" ng-include="'components/header/header.html'"></div>
+    <div id="menu-include" ng-include="'components/menu/menu.html'"></div>
 
     <!-- area where the route's view will be rendered -->
     <div id="page" ng-view></div>
 
 </div>
-<div id="footer-include" ng-include="'partials/footer.html'"></div>
+<div id="footer-include" ng-include="'components/footer/footer.html'"></div>
 
 <!-- Application Scripts -->
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
-<!--<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>-->
 <script language="javascript" type="text/javascript" src="js/ccisApp.js"></script>
 <script language="javascript" type="text/javascript" src="pages/home/homePage.js"></script>
 <script language="javascript" type="text/javascript" src="pages/home/controller.js"></script>
+<script language="javascript" type="text/javascript" src="pages/resume/resumePage.js"></script>
+<script language="javascript" type="text/javascript" src="pages/resume/controller.js"></script>
+<script language="javascript" type="text/javascript" src="pages/projects/projectsPage.js"></script>
+<script language="javascript" type="text/javascript" src="pages/projects/controller.js"></script>
+<script language="javascript" type="text/javascript" src="pages/interests/interestsPage.js"></script>
+<script language="javascript" type="text/javascript" src="pages/interests/controller.js"></script>
+<script language="javascript" type="text/javascript" src="pages/contact/contactPage.js"></script>
+<script language="javascript" type="text/javascript" src="pages/contact/controller.js"></script>
 <script language="javascript" type="text/javascript" src="js/directives/copyright.js"></script>
 <script language="javascript" type="text/javascript" src="js/directives/compile.js"></script>
 

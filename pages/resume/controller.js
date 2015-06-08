@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('resumePage').controller('ResumeCtrl', ['$scope', function($scope) {
+angular.module('resumePage').controller('ResumePageController', ['$scope', function($scope) {
     $scope.certificates = [
         {
             name: 'Cyber Aces Online Training Program (Fall 2013)',

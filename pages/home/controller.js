@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('homePage').controller('HomePageController', ['$scope', function($scope) {
-    $scope.nextPosition = {
-        start: 'January 2015',
-        end: 'June 2015',
+    $scope.graduation = {
+        date: new Date('5/1/2016')
     };
+
     $scope.courses = [
         'Systems and Networks',
         'Algorithms and Data',
@@ -18,6 +18,7 @@ angular.module('homePage').controller('HomePageController', ['$scope', function(
         'Theory of Computation',
         'Introduction to Web Development'
     ];
+
     $scope.positions = [
         {
             index:    'First',

@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('contactPage').controller('ContactCtrl', ['$scope', function($scope) {
+angular.module('contactPage').controller('ContactPageController', ['$scope', function($scope) {
 
 }]);
