@@ -1,8 +1,10 @@
-ccisApp.controller('HomeCtrl', ['$scope', function($scope) {
-    $scope.nextPosition = {
-        start: 'January 2015',
-        end: 'June 2015',
+'use strict';
+
+angular.module('homePage').controller('HomePageController', ['$scope', function($scope) {
+    $scope.graduation = {
+        date: new Date('5/1/2016')
     };
+
     $scope.courses = [
         'Systems and Networks',
         'Algorithms and Data',
@@ -16,6 +18,7 @@ ccisApp.controller('HomeCtrl', ['$scope', function($scope) {
         'Theory of Computation',
         'Introduction to Web Development'
     ];
+
     $scope.positions = [
         {
             index:    'First',
@@ -39,6 +42,7 @@ ccisApp.controller('HomeCtrl', ['$scope', function($scope) {
             location: 'Bedford, MA'
         }
     ];
+
     $scope.linkList = [
         {
             html: '<a title="Northeastern University" href="http://www.northeastern.edu"><img src="images/neu.jpg" alt="Northeastern Husky Logo"/></a>'

@@ -1,4 +1,6 @@
-ccisApp.directive('compile', function ($compile) {
+'use strict';
+
+angular.module('ccisApp').directive('compile', function ($compile) {
   return {
     restrict: 'A',
     replace: true,

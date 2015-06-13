@@ -1,0 +1,44 @@
+<style>
+    #menu > ul > li:nth-child(3) > a {
+        background: #FFFFFF;
+        color: #F44C31;
+    }
+    #menu > ul > li:nth-child(3) > a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+
+<div id="page-bgtop">
+    <div id="page-bgbtm">
+        <div id="content">
+            <div class="post">
+                <h2 class="title">Projects</h2>
+                <div class="entry">
+                    <div ng-repeat="type in projects" class="project-group">
+                        <h3>{{type.index}}</h3>
+                        <p>{{type.desc}}</p>
+                        <ul>
+                            <li ng-repeat="project in type.list">
+                                <div>
+                                    <a target="_blank" ng-href="{{project.url}}" title="{{project.name}}">
+                                        <span ng-show="project.name">{{project.name}}</span>
+                                    </a>
+                                    <span ng-show="project.date">({{project.date}})</span>
+                                    <span ng-show="project.html" compile="project.html" style="position: relative; top: 50%"></span>
+                                </div>
+                                <div ng-show="project.desc">
+                                    <p>{{project.desc}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <div id="sidebar">
+        </div>
+        <div style="clear: both;">&nbsp;</div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<style>
+    #menu > ul > li:nth-child(2) > a {
+        background: #FFFFFF;
+        color: #F44C31;
+    }
+    #menu > ul > li:nth-child(2) > a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+
+<div id="page-bgtop">
+    <div id="page-bgbtm">
+        <div id="content">
+            <div class="post">
+                <h2 class="title">R&#233;sum&#233;</h2>
+                <div class="entry">
+                    <h4>Certificates:</h4>
+                    <ul class="certificate-list">
+                        <li ng-repeat="certificate in certificates">
+                            <a target="_blank" ng-href="{{certificate.attachment}}">
+                                <span>{{certificate.name}}</span>
+                            </a>
+                            <br/>
+                            <em>{{certificate.description}}</em>
+                        </li>
+                    </ul>
+                    <h4>R&#233;sum&#233;:</h4>
+                    <p>
+                        <a href="attachments/resume.pdf" target="_blank">Download Link</a>
+                    </p>
+                    <span>R&#233;sum&#233; Preview (requires Adobe Acrobat or equivalent Web PDF viewer):</span>
+                    <div id="resume">
+                        <iframe width="900px" height="1115px" src="attachments/resume.pdf"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;">&nbsp;</div>
+        </div>
+        <div style="clear: both;">&nbsp;</div>
+    </div>
+</div>
