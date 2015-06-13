@@ -42,6 +42,7 @@ angular.module('homePage').controller('HomePageController', ['$scope', function(
             location: 'Bedford, MA'
         }
     ];
+
     $scope.linkList = [
         {
             html: '<a title="Northeastern University" href="http://www.northeastern.edu"><img src="images/neu.jpg" alt="Northeastern Husky Logo"/></a>'
