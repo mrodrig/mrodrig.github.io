@@ -21,7 +21,7 @@
                                 <ul>
                                     <li ng-repeat="project in type.list">
                                         <div>
-                                            <a ng-href="{{project.url}}" title="{{project.name}}">
+                                            <a target="_blank" ng-href="{{project.url}}" title="{{project.name}}">
                                                 <span ng-show="project.name">{{project.name}}</span>
                                             </a>
                                             <span ng-show="project.date">({{project.date}})</span>
