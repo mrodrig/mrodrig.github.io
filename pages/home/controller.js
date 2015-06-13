@@ -45,13 +45,16 @@ angular.module('homePage').controller('HomePageController', ['$scope', function(
 
     $scope.linkList = [
         {
+            html: '<a title="GitHub" href="http://github.com/mrodrig"><img src="images/github.png" alt="GitHub Logo" height="132" width="132"/></a>'
+        },
+        {
+            html: '<a title="LinkedIn" href="https://www.linkedin.com/in/rodriguesmichael"><img src="images/linkedin.png" alt="LinkedIn Logo" height="118" width="118"/></a>'
+        },
+        {
             html: '<a title="Northeastern University" href="http://www.northeastern.edu"><img src="images/neu.jpg" alt="Northeastern Husky Logo"/></a>'
         },
         {
             html: '<a title="Northeastern University College of Computer and Information Science" href="http://ccs.neu.edu"><img src="images/ccis.jpg" alt="Northeastern CCIS Logo"/></a>'
-        },
-        {
-            html: '<object data="http://rk.revolvermaps.com/f/m.swf" type="application/x-shockwave-flash" width="118" height="118"><param name="movie" value="http://rk.revolvermaps.com/f/m.swf"><param name="allowNetworking" value="all"><param name="allowScriptAccess" value="always"><param name="wmode" value="window"><param name="flashvars" value="m=0&amp;i=aingywkh3b8&amp;c=ff0000&amp;s=118"></object>'
         }
     ];
 }]);
