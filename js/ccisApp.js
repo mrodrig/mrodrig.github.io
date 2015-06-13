@@ -26,8 +26,8 @@
             .when('/projects.html', {templateUrl: 'pages/projects/projectsPage.html', controller: 'ProjectsPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
             .when('/interests.html', {templateUrl: 'pages/interests/interestsPage.html', controller: 'InterestsPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
             .when('/contact.html', {templateUrl: 'pages/contact/contactPage.html', controller: 'ContactPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
-            .when('/notfound', { templateUrl: 'partials/404.html'})
-            .otherwise({redirectTo: '/notfound'});
+            .when('/notfound.html', { templateUrl: 'partials/404.html'})
+            .otherwise({redirectTo: '/notfound.html'});
     }
 
     //declare app level module and hook in config and run blocks
