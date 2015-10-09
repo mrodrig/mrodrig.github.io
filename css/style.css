@@ -261,8 +261,12 @@ img.aligncenter {
 }
 
 .interestsimgs img {
+    margin-left: 60%;
+    margin-top: -25%;
+/*
 padding-left: 25px;
 padding-right: 25px;
+*/
 }
 
 #content {
