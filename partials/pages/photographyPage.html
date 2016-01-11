@@ -1,0 +1,28 @@
+<style>
+    #nav > ul > li:nth-child(4) > a {
+        color: #37C0FB;
+    }
+</style>
+
+<h2>Photography:</h2>
+
+<h3>@HotRodzPhotography</h3>
+<ul>
+	<li ng-repeat="page in socialMediaPages"><a ng-href="{{page.url}}">{{page.name}}</a></li>
+</ul>
+
+<h3>Camera Equipment:</h3>
+<ul>
+	<li ng-repeat="eq in equipment" ng-switch="eq.bold">
+		<strong ng-switch-when="true">{{eq.value}}:</strong>
+		<span ng-switch-default>{{eq.value}}</span>
+	</li>
+</ul>
+
+<h3>Sample Instagram Photos:</h3>
+<p>If the pictures appear grainy, it is most likely because the plugin is loading them larger than the Instagram copy of the image.  Please view them on Flickr for the best quality.</p>
+<!-- Flickrit Instagram Carousel -->
+<div style='position: relative; padding-bottom: 61%; height: 0; overflow: hidden;'>
+	<iframe id='iframe' src='//flickrit.com/slideshowholderinstagram.php?height=60&size=big&tags=hotrodzphotography&credit=2&thumbnails=0&transition=0&layoutType=responsive&sort=0' scrolling='no' frameborder='0'style='width:100%; height:100%; position: absolute; top:0; left:0;' >
+	</iframe>
+</div>

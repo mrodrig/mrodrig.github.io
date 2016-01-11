@@ -1,59 +1,132 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html ng-app="ccisApp">
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <base href="http://www.ccs.neu.edu/home/mrodrig/"/>
-    <title>Michael Rodrigues</title>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
-</head>
-<body>
-<div id="wrapper">
-    <div id="header-include" ng-include="'components/header/header.html'"></div>
-    <div id="menu-include" ng-include="'components/menu/menu.html'"></div>
+	<head lang="en">
+		<title>Michael Rodrigues</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="michael, rodrigues, html, js, javascript, developer, photographer, northeastern, university" />
+    	<meta name="description" content="Michael Rodrigues - Personal Website." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<base href="https://personal-website-mrodrig1.c9users.io/new/"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.min.css" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
 
-    <!-- area where the route's view will be rendered -->
-    <div id="page" ng-view></div>
+			<!-- Header -->
+			<div id="header">
 
-</div>
-<div id="footer-include" ng-include="'components/footer/footer.html'"></div>
+				<!-- Logo -->
+				<h1>
+					<a href="index.html" id="logo">Michael Rodrigues</a>
+					<br/>
+					<em>SENIOR (5TH YEAR), DUAL MAJOR IN COMPUTER SCIENCE AND INFORMATION SCIENCE</em>
+				</h1>
 
-<!-- Application Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
-<script language="javascript" type="text/javascript" src="js/ccisApp.js"></script>
-<script language="javascript" type="text/javascript" src="pages/home/homePage.js"></script>
-<script language="javascript" type="text/javascript" src="pages/home/controller.js"></script>
-<script language="javascript" type="text/javascript" src="pages/resume/resumePage.js"></script>
-<script language="javascript" type="text/javascript" src="pages/resume/controller.js"></script>
-<script language="javascript" type="text/javascript" src="pages/projects/projectsPage.js"></script>
-<script language="javascript" type="text/javascript" src="pages/projects/controller.js"></script>
-<script language="javascript" type="text/javascript" src="pages/interests/interestsPage.js"></script>
-<script language="javascript" type="text/javascript" src="pages/interests/controller.js"></script>
-<script language="javascript" type="text/javascript" src="pages/contact/contactPage.js"></script>
-<script language="javascript" type="text/javascript" src="pages/contact/controller.js"></script>
-<script language="javascript" type="text/javascript" src="js/directives/copyright.js"></script>
-<script language="javascript" type="text/javascript" src="js/directives/compile.js"></script>
-<script type="text/javascript">
-    var sc_project=10483314;
-    var sc_invisible=1;
-    var sc_security="b29781ce";
-    var scJsHost = (("https:" == document.location.protocol) ?
-            "https://secure." : "http://www.");
-    document.write("<sc"+"ript type='text/javascript' src='" +
-    scJsHost+
-    "statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript>
-    <div class="statcounter">
-        <a title="shopify site analytics" href="http://statcounter.com/shopify/" target="_blank">
-            <img class="statcounter" src="http://c.statcounter.com/10483314/0/b29781ce/1/" alt="shopify site analytics">
-        </a>
-    </div>
-</noscript>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="resume.html">R&#233;sum&#233;</a></li>
+						<li>
+							<a href="projects.html">Projects</a>
+							<ul>
+								<li><a href="http://github.com/mrodrig" target="_blank"><span class="icon fa-github"></span> My GitHub</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="photography.html">Photography</a>
+							<ul>
+								<li><a href="https://flickr.com/photos/hotrodzphotography" target="_blank"><span class="icon fa-flickr"></span> Flickr</a></li>
+								<li><a href="http://facebook.com/hotrodzphotography" target="_blank"><span class="icon fa-facebook"></span> Facebook</a></li>
+								<li><a href="http://instagram.com/hotrodzphotography" target="_blank"><span class="icon fa-instagram"></span> Instagram</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About Me</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
 
-</body>
+			<!-- Body : area where the route's view will be rendered -->
+			<section class="wrapper style2">
+				<div class="container">
+					<div class="row">
+						<section class="12u">
+							<div id="page" ng-view></div>
+						</section>
+					</div>
+				</div>
+			</section>
+						
+			
+			<!-- Footer -->
+			<div id="footer">
+				<!-- Copyright -->
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; <span id="dateyear" copyright-date></span> Michael Rodrigues. All rights reserved</li>
+					</ul>
+					<ul class="icons">
+						<li><a href="http://github.com/mrodrig" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/rodriguesmichael" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:rodrigues.mi@husky.neu.edu" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.min.js"></script>
+		
+		<!-- My Scripts -->
+		<script language="javascript" type="text/javascript" src="js/ccisApp.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/home/homePage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/home/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/courses/coursesPage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/courses/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/resume/resumePage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/resume/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/projects/projectsPage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/projects/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/photography/photographyPage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/photography/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/about/aboutPage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/about/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/contact/contactPage.js"></script>
+		<script language="javascript" type="text/javascript" src="js/controllers/contact/controller.js"></script>
+		<script language="javascript" type="text/javascript" src="js/directives/copyright.js"></script>
+		<script language="javascript" type="text/javascript" src="js/directives/compile.js"></script>
+
+		<!--<script type="text/javascript">-->
+		<!--    var sc_project=10483314;-->
+		<!--    var sc_invisible=1;-->
+		<!--    var sc_security="b29781ce";-->
+		<!--    var scJsHost = (("https:" == document.location.protocol) ?-->
+		<!--            "https://secure." : "http://www.");-->
+		<!--    document.write("<sc"+"ript type='text/javascript' src='" +-->
+		<!--    scJsHost+-->
+		<!--    "statcounter.com/counter/counter.js'></"+"script>");-->
+		<!--</script>-->
+		<!--<noscript>-->
+		<!--    <div class="statcounter">-->
+		<!--        <a title="shopify site analytics" href="http://statcounter.com/shopify/" target="_blank">-->
+		<!--            <img class="statcounter" src="http://c.statcounter.com/10483314/0/b29781ce/1/" alt="shopify site analytics">-->
+		<!--        </a>-->
+		<!--    </div>-->
+		<!--</noscript>-->
+
+	</body>
 </html>

@@ -1,0 +1,25 @@
+<style>
+    #nav > ul > li:nth-child(3) > a {
+        color: #37C0FB;
+    }
+</style>
+
+<h2>Projects:</h2>
+<div ng-repeat="type in projects" class="project-group">
+    <h3>{{type.index}}:</h3>
+    <p>{{type.desc}}</p>
+    <ul>
+    	<li ng-repeat="project in type.list">
+            <div>
+                <a target="_blank" ng-href="{{project.url}}" title="{{project.name}}">
+                    <span ng-show="project.name">{{project.name}}</span>
+                </a>
+                <span ng-show="project.date">({{project.date}})</span>
+                <span ng-show="project.html" compile="project.html" style="position: relative; top: 50%"></span>
+            </div>
+            <div>
+                <p>{{project.desc}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
