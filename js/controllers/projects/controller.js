@@ -37,7 +37,7 @@ angular.module('projectsPage').controller('ProjectsPageController', ['$scope', f
                     name: 'Node Module: api-generator',
                     date: 'March 2015 - Present',
                     desc: 'In an effort to reduce the number of times that simple web API code was duplicated, I created this module which can convert a JSON configuration file into functions per the specific configuration.  For example, this can create a GET, POST, and DELETE web API simply based upon the configuration file.',
-                    url : 'https://github.com/mrodrig/doc-path',
+                    url : 'https://github.com/mrodrig/api-generator',
                     html: '<img src="https://www.bithound.io/github/mrodrig/api-generator/badges/dependencies.svg" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/api-generator.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/api-generator.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
                 },
                 {
@@ -51,7 +51,7 @@ angular.module('projectsPage').controller('ProjectsPageController', ['$scope', f
                     name: 'Node Module: updep',
                     date: 'November 2015 - Present',
                     desc: 'As the sole maintainer of multiple Node modules, it is rather time consuming to manually update the package dependencies for each module.  In order to automate it, I created this module which contains a script that can manually update all of the dependencies for a package to the latest version.',
-                    url : 'https://github.com/mrodrig/doc-path',
+                    url : 'https://github.com/mrodrig/updep',
                     html: '<img src="https://www.bithound.io/github/mrodrig/updep/badges/dependencies.svg" style="margin-bottom: 0em; padding-left: 10px;"/><img src="http://img.shields.io/npm/v/updep.svg" style="margin-bottom: 0em; padding-left: 5px;"/><img src="http://img.shields.io/npm/dm/updep.svg" style="margin-bottom: 0em; padding-left: 5px;"/>'
                 }
                 
