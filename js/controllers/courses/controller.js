@@ -38,13 +38,13 @@ angular.module('coursesPage').controller('CoursesPageController', ['$scope', fun
         {subject: 'CS', level: 4500, code: 'CS4500', courseName: 'Software Development', creditHours: 4, semesterTaken: 'Spring 2016', degreeLevel: 'B.S.'},
         {subject: 'IS', level: 4800, code: 'IS4800', courseName: 'Empirical Research Methods', creditHours: 4, semesterTaken: 'Spring 2016', degreeLevel: 'B.S.'},
         {subject: 'IS', level: 4900, code: 'IS4900', courseName: 'Information Science Senior Project', creditHours: 5, semesterTaken: 'Spring 2016', degreeLevel: 'B.S.'},
-        {subject: 'IA', level: 5010, code: 'IA5010', coursename: 'Foundations of Information Assurance', creditHours: 4, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5150, code: 'IA5150', coursename: 'Network Security Practices', creditHours: 4, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5150, code: 'IA5151', coursename: 'Lab for Network Security Practices', creditHours: 0, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5130, code: 'IA5130', coursename: 'Computer System Security', creditHours: 4, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5131, code: 'IA5131', coursename: 'Lab for Computer System Security', creditHours: 0, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5210, code: 'IA5210', coursename: 'Information System Forensics', creditHours: 4, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
-        {subject: 'IA', level: 5211, code: 'IA5211', coursename: 'Lab for Information System Forensics', creditHours: 0, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'}
+        {subject: 'IA', level: 5010, code: 'IA5010', courseName: 'Foundations of Information Assurance', creditHours: 4, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5150, code: 'IA5150', courseName: 'Network Security Practices', creditHours: 4, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5150, code: 'IA5151', courseName: 'Lab for Network Security Practices', creditHours: 0, semesterTaken: 'Fall 2016', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5130, code: 'IA5130', courseName: 'Computer System Security', creditHours: 4, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5131, code: 'IA5131', courseName: 'Lab for Computer System Security', creditHours: 0, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5210, code: 'IA5210', courseName: 'Information System Forensics', creditHours: 4, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'},
+        {subject: 'IA', level: 5211, code: 'IA5211', courseName: 'Lab for Information System Forensics', creditHours: 0, semesterTaken: 'Spring 2017', degreeLevel: 'M.S.'}
     ];
     
     $scope.gridOptions = {
