@@ -83,7 +83,7 @@ angular.module('projectsPage').controller('ProjectsPageController', ['$scope', f
                     name: 'IS4300 - Human-Computer Interaction',
                     date: '2013',
                     desc: 'Human-Computer Interaction Course Assignments and Projects',
-                    url:  'attachments/projects/IS4300'
+                    url:  'attachments/projects/IS4300.tar.gz'
                 },
                 {
                     name: 'Frogger as a Java Applet',
