@@ -6,6 +6,9 @@ angular.module('homePage').controller('HomePageController', ['$scope', function(
     };
 
     $scope.courses = [
+        'Network Security Practices',
+        'Computer System Security',
+        'Information System Forensics',
         'Systems and Networks',
         'Algorithms and Data',
         'Information System Design and Development',
@@ -13,10 +16,7 @@ angular.module('homePage').controller('HomePageController', ['$scope', function(
         'Computer Organization',
         'Database Design',
         'Human-Computer Interaction',
-        'Discrete Structures',
-        'Logic and Computation',
-        'Theory of Computation',
-        'Introduction to Web Development'
+        'Theory of Computation'
     ];
 
     $scope.positions = [
