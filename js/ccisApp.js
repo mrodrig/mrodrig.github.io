@@ -20,18 +20,20 @@
 
         //The routes that our angular app will handle
         $routeProvider
-            .when('/', {templateUrl: 'pages/home/homePage.html', controller: 'HomePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
-            .when('/index.html', {templateUrl: 'pages/home/homePage.html', controller: 'HomePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true})
-            .when('/resume.html', {templateUrl: 'pages/resume/resumePage.html', controller: 'ResumePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
-            .when('/projects.html', {templateUrl: 'pages/projects/projectsPage.html', controller: 'ProjectsPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
-            .when('/interests.html', {templateUrl: 'pages/interests/interestsPage.html', controller: 'InterestsPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
-            .when('/contact.html', {templateUrl: 'pages/contact/contactPage.html', controller: 'ContactPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
+            .when('/', {templateUrl: 'partials/pages/homePage.html', controller: 'HomePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
+            .when('/index.html', {templateUrl: 'partials/pages/homePage.html', controller: 'HomePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true})
+            .when('/courses.html', {templateUrl: 'partials/pages/coursesPage.html', controller: 'CoursesPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true})
+            .when('/resume.html', {templateUrl: 'partials/pages/resumePage.html', controller: 'ResumePageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
+            .when('/projects.html', {templateUrl: 'partials/pages/projectsPage.html', controller: 'ProjectsPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
+            .when('/photography.html', {templateUrl: 'partials/pages/photographyPage.html', controller: 'PhotographyPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true})
+            .when('/about.html', {templateUrl: 'partials/pages/aboutPage.html', controller: 'AboutPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
+            .when('/contact.html', {templateUrl: 'partials/pages/contactPage.html', controller: 'ContactPageController', controllerAs: 'pageCtrl', caseInsensitiveMatch: true })
             .when('/notfound.html', { templateUrl: 'partials/404.html'})
             .otherwise({redirectTo: '/notfound.html'});
     }
-
+    
     //declare app level module and hook in config and run blocks
-    angular.module('ccisApp', ['ngRoute', 'homePage', 'resumePage', 'projectsPage', 'interestsPage', 'contactPage'])
+    angular.module('ccisApp', ['ngRoute', 'ui.grid', 'homePage', 'coursesPage', 'resumePage', 'projectsPage', 'photographyPage', 'aboutPage', 'contactPage'])
         .config(Config);
 
 })();

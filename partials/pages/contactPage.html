@@ -1,0 +1,43 @@
+<style>
+    #nav > ul > li:nth-child(6) > a {
+        color: #37C0FB;
+    }
+</style>
+
+<!--<h2>Contact:</h2>-->
+
+<!--<p>Thank you for looking at my website. If you have any questions, please contact me via email:</p>-->
+<!--<a href="mailto:rodrigues.mi@husky.neu.edu">rodrigues.mi@husky.neu.edu</a>-->
+
+<form action="https://api:key-90e27fb32160148dc1cc3890ef601355@api.mailgun.net/v3/michaelrodrigues.com/messages" method="post">
+	<div class="row 50%">
+		<div class="6u 12u(mobilep)">
+			<input type="text" name="name" id="name" placeholder="Name" ng-model="name" ng-change="updateFrom()" required />
+		</div>
+		<div class="6u 12u(mobilep)">
+			<input type="email" name="email" id="email" placeholder="Email" ng-model="email" ng-change="updateFrom()" required />
+		</div>
+		<input hidden name="from" id="from" ng-model="from" />
+		<input hidden name="to" id="to" value="rodrigues.mi@husky.neu.edu" />
+	</div>
+	<div class="row 50%">
+		<div class="12u">
+			<input type="text" name="subject" id="subject" placeholder="Subject" required />
+		</div>
+	</div>
+	<div class="row 50%">
+		<div class="12u">
+			<textarea name="text" id="text" placeholder="Message" rows="5" required></textarea>
+		</div>
+	</div>
+	<div class="row 50%">
+		<div class="12u">
+			<ul class="actions">
+				<li><input type="submit" class="button alt" value="Send Message" /></li>
+			</ul>
+		</div>
+	</div>
+</form>
+
+<p></p>
+<p>Prefer to use your email client? Click to send an email: <a href="mailto:rodrigues.mi@husky.neu.edu">rodrigues.mi@husky.neu.edu</a>.</p>
