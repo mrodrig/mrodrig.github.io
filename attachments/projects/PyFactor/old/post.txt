@@ -1,1 +1,0 @@
-So I wrote a program in Python that can find factors of numbers like 982,930,523,452 in about 2 seconds. Check it out on my Northeastern site: ccs.neu.edu/home/mrodrig/PyFactor.html
