@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     assetsDir: 'assets',
-    publicPath: '/vue-homepage/',
+    publicPath: '/',
     outputDir: undefined,
     runtimeCompiler: undefined,
     productionSourceMap: false,
@@ -13,7 +13,7 @@ module.exports = {
         'style-resources-loader': {
             'preProcessor': 'less',
             'patterns': [
-                path.resolve(__dirname, './src/less/**/*.less'),
+                path.resolve(__dirname, './src/less/**/*.less')
             ]
         }
     }
