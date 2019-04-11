@@ -46,7 +46,7 @@ export default {
             username: 'api',
             keyp0: 'key-',
             keyp1: '90e27fb32160148dc1cc3890ef601355',
-            api: 'api.mailgun.net/v3/michaelrodrigues.com/messages',
+            api: 'api.mailgun.net/v3/sandbox9fe48d38ba29476a918ece4c8b7700ec.mailgun.org/messages',
         };
     },
     computed: {
