@@ -98,7 +98,7 @@ export default {
             account: {},
             numberOfPhotos: 18,
             instagramBaseUrl: 'https://instagram.com/',
-            accessToken: '2041962474.2c405b3.21c0e46556ca405dabbff6b287e8482b'
+            accessToken: '2041962474.1677ed0.f1c5f4af294f478b8b6fd0372b983c2a'
         };
     },
     created () {
