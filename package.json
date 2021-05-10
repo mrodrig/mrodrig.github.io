@@ -11,7 +11,7 @@
     "cleanup-local-deploy-branches": "git branch -D `git branch | grep -E 'master-*'`"
   },
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "^0.21.1",
     "core-js": "2.6.5",
     "pdfvuer": "1.2.0",
     "vue": "2.6.11",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.5.0",
     "@vue/cli-plugin-eslint": "3.5.0",
-    "@vue/cli-service": "4.2.2",
+    "@vue/cli-service": "^4.5.13",
     "babel-eslint": "10.0.1",
     "eslint": "5.15.1",
     "eslint-plugin-vue": "5.2.2",

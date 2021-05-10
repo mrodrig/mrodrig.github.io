@@ -19,111 +19,19 @@
             In the first year of ownership, I have already taken several thousand photos with it and look forward to taking thousands more!
         </p>
 
-        <h2>Recent Instagram Photos</h2>
-        <div>
-            <div v-if="account" v-show="userInfoLoaded" class="user">
-                <div class="user-picture user-info">
-                    <a :href="instagramBaseUrl + account.username" target="_blank" rel="noopener" v-on:click="trackClick('profile_picture')">
-                        <img :src="account.profile_picture" alt="Instagram Profile Picture" v-on:load="showUserInfo">
-                    </a>
-                </div>
-                <div class="user-info">
-                    <div class="name">{{account.full_name}}</div>
-                    <div class="username">
-                        <a :href="instagramBaseUrl + account.username" target="_blank" rel="noopener" v-on:click="trackClick('username')">
-                            @{{account.username}}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="photos">
-            <vue-instagram :token="accessToken" :count="numberOfPhotos" media-type="image">
-                <template slot="error">
-                    <div class="center">Sorry, an error occurred fetching photos from Instagram.</div>
-                </template>
-                <template slot="feeds" slot-scope="props">
-                    <div class="photo">
-                        <div class="card">
-                            <div class="card-image">
-                                <img :src="props.feed.images.standard_resolution.url" alt="Instagram Post Photograph">
-                            </div>
-
-                            <div class="card-metadata">
-                                <div class="card-footer">
-                                    <div class="card-footer-item">
-                                        <heart-icon class="icon" />
-                                        <span class="likes icon-text">{{props.feed.likes.count}}</span>
-                                    </div>
-                                    <div class="card-footer-item">
-                                        <comment-icon class="icon" />
-                                        <span class="comments icon-text">{{props.feed.comments.count}}</span>
-                                    </div>
-                                    <div class="card-footer-item">
-                                        <a :href="props.feed.link" target="_blank" rel="noopener" v-on:click="trackClick(props.feed.link)">
-                                            <open-in-new-icon class="icon open-icon" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-                <template slot="error" slot-scope="props">
-                    <div class="fancy-alert"> {{props.error.error_message}} </div>
-                </template>
-            </vue-instagram>
-        </div>
+        <h2>Recent Photos</h2>
+        
+        <p>
+            See some recent photos I've taken here:
+            <a href="https://hotrodzphotography.github.io/#/albums">Hot Rodz Photography Albums</a>
+        </p>
     </div>
 </template>
 
 <script>
-import HeartIcon from 'vue-material-design-icons/Heart.vue';
-import CommentIcon from 'vue-material-design-icons/Comment.vue';
-import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
-import VueInstagram from 'vue-instagram';
-import api from '../services/api.js';
 
 export default {
     name: 'photography',
-    components: {
-        HeartIcon,
-        CommentIcon,
-        OpenInNewIcon,
-        VueInstagram
-    },
-    data: function () {
-        return {
-            userInfoLoaded: false,
-            account: {},
-            numberOfPhotos: 18,
-            instagramBaseUrl: 'https://instagram.com/',
-            accessToken: '2041962474.1677ed0.f1c5f4af294f478b8b6fd0372b983c2a'
-        };
-    },
-    created () {
-        let component = this;
-
-        api.getInstagramAccountInfo(this.accessToken)
-            .then(function (data) {
-                component.account = data.data.data;
-            })
-            .catch(function (error) {
-                component.error = error;
-            });
-    },
-    methods: {
-        showUserInfo: function () {
-            this.userInfoLoaded = true;
-        },
-        trackClick: function (eventLabel) {
-            this.$ga.event({
-                eventCategory: 'photography',
-                eventAction: 'click',
-                eventLabel: eventLabel
-            });
-        }
-    }
 };
 </script>
 
