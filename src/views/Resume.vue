@@ -4,9 +4,9 @@
             <div class="download-link">
                 <a :href="resumeSource" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
             </div>
-            <div class="download-link">
+            <!-- <div class="download-link">
                 <a :href="cvSource" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
-            </div>
+            </div> -->
         </div>
         <pdf :src="resumeSource" />
     </div>
