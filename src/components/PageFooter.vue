@@ -38,7 +38,7 @@ export default {
         return {
             githubUrl: 'https://github.com/mrodrig',
             linkedInUrl: 'https://www.linkedin.com/in/rodriguesmichael',
-            emailUrl: 'mailto:rodrigues.mi@husky.neu.edu',
+            emailUrl: 'mailto:rodrigues.mi@northeastern.edu',
             currentYear: (new Date()).getFullYear(),
             iconSize: 36
         };
