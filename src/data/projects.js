@@ -47,6 +47,18 @@ export default class Projects {
             url: 'https://mrodrig.github.io/deeks',
             description: 'This module also contains functionality which originally was part of the json-2-csv module, but was abstracted out in order to provide the same functionality for other modules. Specifically, it generates a list of keys from a single document or a list of documents.',
             startDate: 'November 2018'
+        },
+        {
+            name: '@mrodrig/json-2-csv-cli',
+            url: 'https://github.com/mrodrig/json-2-csv-cli',
+            description: 'In order to provide a CLI for my json-2-csv module without ballooning the package size of the core package through additional dependencies, I opted to develop the CLI functionality as a separate package which could be installed by users who needed this capability.',
+            startDate: 'December 2019'
+        },
+        {
+            name: 'vue-scandit',
+            url: 'https://github.com/mrodrig/vue-scandit',
+            description: 'A Vue component library that serves as a convenience wrapper for the Scandit Web SDK in order to provide a simpler integration with VueJS.',
+            startDate: 'August 2020'
         }
     ];
 
@@ -55,9 +67,9 @@ export default class Projects {
             name: 'SignatureLimoCompany.com',
             url: 'https://signaturelimocompany.com',
             description: [
-                'Secure server configuration, patching, domain management, and DevOps configuration',
-                'MongoDB/ExpressJS/NodeJS server-side REST API',
-                'AngularJS front-end website',
+                'Originally developed using AngularJS and the MEAN stack for a REST API on top of a Digital Ocean Droplet which I hardened leveraging multiple technical controls',
+                'Rewritten in 2020 using VueJS, Google Cloud Platform/Firebase, and Digital Ocean\'s App Platform to replace the older architecture',
+                'New architecture is designed to improve security, user experience, and availability',
                 'Averages over 30 client quote inquiries per month'
             ],
             startDate: 'March 2014'
@@ -70,7 +82,7 @@ export default class Projects {
             url: 'https://github.com/neu-insure-antiphishing-research-group',
             description: [
                 'Developed a new Google Chrome Extension to combat phishing attacks',
-                'Analyzed phishing emails, existing technologies, and shortcomings in current technical' +
+                'Analyzed phishing emails, existing technologies, and shortcomings in current technical ' +
                 'controls in partnership with the Johns Hopkins Applied Physics Laboratory (APL)'
             ],
             startDate: 'September 2017',

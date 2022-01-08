@@ -1,7 +1,7 @@
 <template>
     <div id="tagline">
         <h1><a href="#" v-on:click="trackEvent('click')" v-on:mouseover="trackEvent('hover')">Michael Rodrigues</a></h1>
-        <p id="secondary">Senior Web Applications Developer and Cybersecurity Professional</p>
+        <p id="secondary">Lead Mobile Architect, Web Applications Developer, and Cybersecurity Professional</p>
     </div>
 </template>
 

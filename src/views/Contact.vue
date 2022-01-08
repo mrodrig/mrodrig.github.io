@@ -44,7 +44,7 @@ export default {
             replyTo: '',
             subject: '',
             body: '',
-            destinationEmailAddress: 'rodrigues.mi@husky.neu.edu',
+            destinationEmailAddress: 'rodrigues.mi@northeastern.edu',
         };
     },
     computed: {
