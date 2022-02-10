@@ -70,9 +70,11 @@ export default class Projects {
                 'Originally developed using AngularJS and the MEAN stack for a REST API on top of a Digital Ocean Droplet which I hardened leveraging multiple technical controls',
                 'Rewritten in 2020 using VueJS, Google Cloud Platform/Firebase, and Digital Ocean\'s App Platform to replace the older architecture',
                 'New architecture is designed to improve security, user experience, and availability',
-                'Averages over 30 client quote inquiries per month'
+                'Averages over 40 client quote inquiries per month',
+                'Business closed in 2022 and site was retired'
             ],
-            startDate: 'March 2014'
+            startDate: 'March 2014',
+            endDate: 'February 2022'
         }
     ];
 
