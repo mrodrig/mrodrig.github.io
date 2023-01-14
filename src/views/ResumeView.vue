@@ -1,70 +1,51 @@
 <template>
     <div id="resume" class="center">
-        <div v-for="page in numPages" :id="page" :key="page">
-            <pdf :page="page" :src="pdfData" :scale="scale" :resize="true" class="inline page">
-                <template slot="loading">
-                    <div class="center">
-                        <p>Please wait, loading...</p>
-                        <img id="loading" src="../assets/spinner-icon.gif" alt="Loading icon">
-                    </div>
-                </template>
-            </pdf>
-            <div v-if="numPages > 1" class="center">
-                {{page}} of {{numPages}}
+        <div id="download">
+            <div class="download-link">
+                <a :href="resumeSource" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
             </div>
+            <!-- <div class="download-link">
+                <a :href="cvSource" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
+            </div> -->
         </div>
+        <pdf-viewer :src="resumeSource" />
     </div>
 </template>
 
-<script>
-import pdf from 'pdfvuer';
-// Symbol iterator polyfill for IE 11
-import 'core-js/fn/symbol/iterator.js';
+<script lang="ts">
+import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
+import PdfViewer from '../components/PdfViewer.vue';
 
 export default {
-    name: 'resume',
+    name: 'resume-view',
     components: {
-        pdf
-    },
-    props: {
-        src: {
-            type: String,
-            default: () => ''
-        }
+        ArrowDownBoldBox,
+        PdfViewer,
     },
     data () {
         return {
-            numPages: 1,
-            pdfData: undefined,
-            scale: 'page-width'
+            resumeSource: 'pdf/resume.pdf',
+            cvSource: 'pdf/cv.pdf',
         };
     },
-    watch: {
-        src: function () {
-            this.load();
-        }
-    },
-    created () {
-        this.load();
-    },
     methods: {
-        load: function () {
-            if (this.src) {
-                return this.getPdf();
-            }
+        trackClick: function (downloadType: string) {
+            console.log(downloadType);
+            // TODO(mrodrig): enable again
+            // this.$ga.event({
+            //     eventCategory: 'resume',
+            //     eventAction: 'download',
+            //     eventLabel: downloadType,
+            // });
         },
-        getPdf: function () {
-            let self = this;
-            self.pdfData = pdf.createLoadingTask(this.src);
-            self.pdfData.then(pdf => {
-                self.numPages = pdf.numPages;
-            });
-        }
-    }
+
+    },
 };
 </script>
 
 <style lang="less">
+    @import "../less/constants.less";
+
     #resume {
         padding-top: 1em;
 

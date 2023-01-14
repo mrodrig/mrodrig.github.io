@@ -1,46 +1,69 @@
 <template>
     <div id="resume" class="center">
-        <div id="download">
-            <div class="download-link">
-                <a :href="resumeSource" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
+        <div v-for="page in numPages" :id="page" :key="page">
+            <pdf :page="page" :src="pdfData" :scale="scale" :resize="true" class="inline page">
+                <template v-slot:loading>
+                    <div class="center">
+                        <p>Please wait, loading...</p>
+                        <img id="loading" src="../assets/spinner-icon.gif" alt="Loading icon">
+                    </div>
+                </template>
+            </pdf>
+            <div v-if="numPages > 1" class="center">
+                {{page}} of {{numPages}}
             </div>
-            <!-- <div class="download-link">
-                <a :href="cvSource" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
-            </div> -->
         </div>
-        <pdf :src="resumeSource" />
     </div>
 </template>
 
 <script>
-import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
+import pdf from 'pdfvuer';
 
 export default {
-    name: 'resume',
+    name: 'pdf-viewer',
     components: {
-        ArrowDownBoldBox,
-        Pdf: () => import('../components/Pdf.vue')
+        pdf,
+    },
+    props: {
+        src: {
+            type: String,
+            default: () => '',
+        },
     },
     data () {
         return {
-            resumeSource: 'pdf/resume.pdf',
-            cvSource: 'pdf/cv.pdf'
+            numPages: 1,
+            pdfData: null,
+            scale: 'page-width',
         };
     },
+    watch: {
+        src: function () {
+            this.load();
+        },
+    },
+    created () {
+        this.load();
+    },
     methods: {
-        trackClick: function (downloadType) {
-            this.$ga.event({
-                eventCategory: 'resume',
-                eventAction: 'download',
-                eventLabel: downloadType
+        load: function () {
+            if (this.src) {
+                return this.getPdf();
+            }
+        },
+        getPdf: function () {
+            this.pdfData = pdf.createLoadingTask(this.src);
+            this.pdfData.then(pdf => {
+                this.numPages = pdf.numPages;
             });
-        }
-
-    }
+        },
+    },
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+    @import "../less/constants.less";
+
     #resume {
         padding-top: 1em;
 

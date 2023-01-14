@@ -17,26 +17,28 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import project from '../components/Project.vue';
-import projects from '../data/projects.js';
+import projects from '../data/projects';
 
 export default {
-    name: 'contact',
+    name: 'projects-view',
     components: {
-        project
+        project,
     },
     data () {
         return {
             npmProjects: projects.npmProjects,
             serverProjects: projects.serverProjects,
-            courseProjects: projects.courseProjects
+            courseProjects: projects.courseProjects,
         };
-    }
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #projects {
         margin: 0 2em;
 

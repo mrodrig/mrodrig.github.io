@@ -18,7 +18,7 @@ import MenuIcon from 'vue-material-design-icons/Menu.vue';
 export default {
     name: 'navigation-header',
     components: {
-        MenuIcon
+        MenuIcon,
     },
     props: {},
     data () {
@@ -29,8 +29,8 @@ export default {
                 { name: 'Résumé', to: '/resume' },
                 { name: 'Projects', to: '/projects' },
                 { name: 'Photography', to: '/photography' },
-                { name: 'Contact', to: '/contact' }
-            ]
+                { name: 'Contact', to: '/contact' },
+            ],
         };
     },
     methods: {
@@ -45,20 +45,23 @@ export default {
                 this.navBarExpanded = false;
             }
 
-            this.trackEvent('navigation', 'click', route);
+            // TODO(mrodrig): re-enable
+            // this.trackEvent('navigation', 'click', route);
         },
         trackEvent: function (category, action, label) {
             this.$ga.event({
                 eventCategory: category,
                 eventAction: action,
-                eventLabel: label
+                eventLabel: label,
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #nav {
         padding: 0;
         text-align: center;

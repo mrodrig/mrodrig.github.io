@@ -7,21 +7,23 @@
 
 <script>
 export default {
-    name: 'tagline',
+    name: 'tagline-header',
     props: {},
     methods: {
         trackEvent: function (event) {
             this.$ga.event({
                 eventCategory: 'tagline',
                 eventAction: event,
-                eventLabel: 'name'
+                eventLabel: 'name',
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #tagline {
     text-align: center;
     background-color: #f4f4f4;

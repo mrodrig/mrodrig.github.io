@@ -20,7 +20,7 @@
         </p>
 
         <h2>Recent Photos</h2>
-        
+
         <p>
             See some recent photos I've taken here:
             <a href="https://hotrodzphotography.github.io/#/albums">Hot Rodz Photography Albums</a>
@@ -28,14 +28,15 @@
     </div>
 </template>
 
-<script>
-
+<script lang="ts">
 export default {
-    name: 'photography',
+    name: 'photography-view',
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #photography {
         margin: 0 2em;
 

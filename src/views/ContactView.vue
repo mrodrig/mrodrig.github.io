@@ -33,9 +33,9 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-    name: 'contact',
+    name: 'contact-view',
     props: {},
     data () {
         return {
@@ -43,7 +43,6 @@ export default {
             name: '',
             replyTo: '',
             subject: '',
-            body: '',
             destinationEmailAddress: 'rodrigues.mi@northeastern.edu',
         };
     },
@@ -55,24 +54,25 @@ export default {
         //     return 'https://' + this.username + ':' + this.keyp0 + this.keyp1 + '@' + this.api;
         // },
         mailTo: function () {
-            return 'mailto: ' + this.destinationEmailAddress
-                + '?subject=' + this.subject
-                + '&body=' + this.body;
-        }
+            return `mailto:${this.destinationEmailAddress}?subject=${this.subject}`;
+        },
     },
     methods: {
-        trackClick: function (item) {
-            this.$ga.event({
-                eventCategory: 'contact',
-                eventAction: 'click',
-                eventLabel: item
-            });
-        }
-    }
+        trackClick: function (item: string) {
+            // TODO(mrodrig): re-enable
+            // this.$ga.event({
+            //     eventCategory: 'contact',
+            //     eventAction: 'click',
+            //     eventLabel: item,
+            // });
+        },
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #contact {
         padding: 2em 0;
 

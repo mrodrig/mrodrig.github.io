@@ -72,7 +72,7 @@
 </template>
 
 <style lang="less">
-    #home {
-        margin: 0 2em;
-    }
+  #home {
+      margin: 0 2em;
+  }
 </style>

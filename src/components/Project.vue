@@ -33,25 +33,25 @@
 import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
 
 export default {
-    name: 'project',
+    name: 'project-details',
     components: {
-        OpenInNewIcon
+        OpenInNewIcon,
     },
     props: {
         project: {
             type: Object,
-            default: () => {}
+            default: () => ({}),
         },
         type: {
             type: String,
-            default: () => ''
-        }
+            default: () => '',
+        },
     },
     computed: {
         isNpmProject: function () {
             return this.type === 'npm';
         },
-        downloadsPerMonthBadgeUrl: function() {
+        downloadsPerMonthBadgeUrl: function () {
             return 'https://img.shields.io/npm/dm/' + this.project.name + '.svg';
         },
         versionBadgeUrl: function () {
@@ -62,21 +62,23 @@ export default {
         },
         descriptionType: function () {
             return typeof this.project.description;
-        }
+        },
     },
     methods: {
         trackClick: function (projectName) {
             this.$ga.event({
                 eventCategory: 'projects',
                 eventAction: 'click',
-                eventLabel: projectName
+                eventLabel: projectName,
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     .project {
         .project-title {
             * {

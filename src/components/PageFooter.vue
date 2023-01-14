@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import GithubCircle from 'vue-material-design-icons/GithubCircle.vue';
+import GithubCircle from 'vue-material-design-icons/Github.vue';
 import Linkedin from 'vue-material-design-icons/Linkedin.vue';
 import Email from 'vue-material-design-icons/Email.vue';
 
@@ -32,7 +32,7 @@ export default {
     components: {
         GithubCircle,
         Linkedin,
-        Email
+        Email,
     },
     data () {
         return {
@@ -40,7 +40,7 @@ export default {
             linkedInUrl: 'https://www.linkedin.com/in/rodriguesmichael',
             emailUrl: 'mailto:rodrigues.mi@northeastern.edu',
             currentYear: (new Date()).getFullYear(),
-            iconSize: 36
+            iconSize: 36,
         };
     },
     methods: {
@@ -48,14 +48,16 @@ export default {
             this.$ga.event({
                 eventCategory: 'footer',
                 eventAction: 'click',
-                eventLabel: iconType
+                eventLabel: iconType,
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style lang="less">
+    @import '../less/constants.less';
+
     #footer {
         margin-top: 2em;
         text-align: center;
