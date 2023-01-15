@@ -33,7 +33,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
     name: 'contact-view',
     props: {},
@@ -58,13 +58,13 @@ export default {
         },
     },
     methods: {
-        trackClick: function (item: string) {
-            // TODO(mrodrig): re-enable
-            // this.$ga.event({
-            //     eventCategory: 'contact',
-            //     eventAction: 'click',
-            //     eventLabel: item,
-            // });
+        trackClick: function (item) {
+            console.log(item);
+            this.$gtag.event('click', {
+                event_category: 'contact',
+                event_label: item,
+                value: item,
+            });
         },
     },
 };

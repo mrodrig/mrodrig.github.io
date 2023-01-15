@@ -5,18 +5,19 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
     name: 'not-found',
     created () {
         // Log the route that the user tried to access
-        // TODO(mrodrig): re-enable this
-        // this.$ga.event({
-        //     eventCategory: 'navigation',
-        //     eventAction: 'not-found',
-        //     eventLabel: this.$route.path
+        // this.$gtag.event('not-found', {
+        //     event_category: 'navigation',
+        //     event_label: this.$route.path,
+        //     value: this.$route.path,
         // });
     },
-};
+});
 </script>
 
 <style lang="less">

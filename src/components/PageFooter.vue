@@ -45,10 +45,10 @@ export default {
     },
     methods: {
         trackClick: function (iconType) {
-            this.$ga.event({
-                eventCategory: 'footer',
-                eventAction: 'click',
-                eventLabel: iconType,
+            this.$gtag.event('click', {
+                event_category: 'footer',
+                event_label: iconType,
+                value: iconType,
             });
         },
     },

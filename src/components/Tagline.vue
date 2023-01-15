@@ -11,10 +11,10 @@ export default {
     props: {},
     methods: {
         trackEvent: function (event) {
-            this.$ga.event({
-                eventCategory: 'tagline',
-                eventAction: event,
-                eventLabel: 'name',
+            this.$gtag.event(event, {
+                event_category: 'tagline',
+                event_label: 'name',
+                value: event,
             });
         },
     },

@@ -12,10 +12,11 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
 
-export default {
+export default defineComponent({
     name: 'navigation-header',
     components: {
         MenuIcon,
@@ -39,24 +40,23 @@ export default {
 
             this.trackEvent('navigation', this.navBarExpanded ? 'collapse' : 'expand', 'navbar');
         },
-        trackClick: function (route) {
+        trackClick: function (route: string) {
             // Close mobile the nav bar if it is expanded and the user changes pages
             if (this.navBarExpanded) {
                 this.navBarExpanded = false;
             }
 
-            // TODO(mrodrig): re-enable
-            // this.trackEvent('navigation', 'click', route);
+            this.trackEvent('navigation', 'click', route);
         },
-        trackEvent: function (category, action, label) {
-            this.$ga.event({
-                eventCategory: category,
-                eventAction: action,
-                eventLabel: label,
+        trackEvent: function (category: string, action: string, label: string) {
+            this.$gtag.event(action, {
+                event_category: category,
+                event_label: label,
+                value: action,
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less">

@@ -13,10 +13,11 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
 import PdfViewer from '../components/PdfViewer.vue';
 
-export default {
+export default defineComponent({
     name: 'resume-view',
     components: {
         ArrowDownBoldBox,
@@ -31,16 +32,15 @@ export default {
     methods: {
         trackClick: function (downloadType: string) {
             console.log(downloadType);
-            // TODO(mrodrig): enable again
-            // this.$ga.event({
-            //     eventCategory: 'resume',
-            //     eventAction: 'download',
-            //     eventLabel: downloadType,
+            // this.$gtag.event('download', {
+            //     event_category: 'resume',
+            //     event_label: downloadType,
+            //     value: downloadType,
             // });
         },
 
     },
-};
+});
 </script>
 
 <style lang="less">

@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import HomeView from '@/views/HomeView.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -13,12 +13,12 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/resume',
         name: 'resume',
-        component: () => import(/* webpackChunkName: "resume" */ '../views/ResumeView.vue'),
+        component: () => import(/* webpackChunkName: "resume" */ '@/views/ResumeView.vue'),
     },
     {
         path: '/projects',
         name: 'projects',
-        component: () => import(/* webpackChunkName: "projects" */ '../views/ProjectsView.vue'),
+        component: () => import(/* webpackChunkName: "projects" */ '@/views/ProjectsView.vue'),
     },
     {
         path: '/photography',

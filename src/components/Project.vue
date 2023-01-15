@@ -66,10 +66,10 @@ export default {
     },
     methods: {
         trackClick: function (projectName) {
-            this.$ga.event({
-                eventCategory: 'projects',
-                eventAction: 'click',
-                eventLabel: projectName,
+            this.$gtag.event('click', {
+                event_category: 'projects',
+                event_label: projectName,
+                value: projectName,
             });
         },
     },
