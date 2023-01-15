@@ -20,9 +20,3 @@ declare module 'vue/types/vue' {
     $gtag: VueGtag;
   }
 }
-
-module "vue/types/vue" {
-  interface Vue {
-    $gtag: VueGtag;
-  }
-}

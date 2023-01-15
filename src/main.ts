@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import Rollbar from 'rollbar';
 import VueGtag from 'vue-gtag';
+import Firebase from '@/services/firebase';
 import App from './App.vue';
 import router from './router';
 

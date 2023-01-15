@@ -11,6 +11,7 @@
     "cleanup-local-deploy-branches": "git branch -D `git branch | grep -E 'master-*'`"
   },
   "dependencies": {
+    "firebase": "^9.15.0",
     "pdfvuer": "^2.0.1",
     "rollbar": "^2.26.1",
     "vue": "^3.2.13",

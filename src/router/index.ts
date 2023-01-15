@@ -1,4 +1,5 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from 'vue-router';
+import Firebase from '@/services/firebase';
 import HomeView from '@/views/HomeView.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -40,6 +41,10 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
+});
+
+router.afterEach((to: RouteLocationNormalized) => {
+    Firebase.logNavigation(to.name?.toString() ?? 'unknown', to.fullPath);
 });
 
 export default router;

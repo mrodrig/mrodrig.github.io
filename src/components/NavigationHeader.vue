@@ -49,11 +49,11 @@ export default defineComponent({
             this.trackEvent('navigation', 'click', route);
         },
         trackEvent: function (category: string, action: string, label: string) {
-            this.$gtag.event(action, {
-                event_category: category,
-                event_label: label,
-                value: action,
-            });
+            // this.$gtag.event(action, {
+            //     event_category: category,
+            //     event_label: label,
+            //     value: action,
+            // });
         },
     },
 });
