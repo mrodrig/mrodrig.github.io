@@ -18,7 +18,7 @@ import { defineComponent } from 'vue';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
 
 export default defineComponent({
-    name: 'navigation-header',
+    name: 'NavigationHeader',
     components: {
         MenuIcon,
     },

@@ -38,7 +38,7 @@ import { defineComponent } from 'vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'contact-view',
+    name: 'ContactView',
     data () {
         return {
             destinationEmailAddress: 'rodrigues.mi@northeastern.edu',

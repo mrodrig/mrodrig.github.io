@@ -35,7 +35,7 @@ import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'project-details',
+    name: 'ProjectDetails',
     components: {
         OpenInNewIcon,
     },

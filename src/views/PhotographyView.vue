@@ -30,7 +30,7 @@
 
 <script lang="ts">
 export default {
-    name: 'photography-view',
+    name: 'PhotographyView',
 };
 </script>
 

@@ -30,7 +30,7 @@ import Email from 'vue-material-design-icons/Email.vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'page-footer',
+    name: 'PageFooter',
     components: {
         GithubCircle,
         Linkedin,

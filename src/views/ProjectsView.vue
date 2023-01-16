@@ -22,7 +22,7 @@ import project from '@/components/Project.vue';
 import projects from '@/data/projects';
 
 export default {
-    name: 'projects-view',
+    name: 'ProjectsView',
     components: {
         project,
     },

@@ -13,7 +13,7 @@ import navigationHeader from '@/components/NavigationHeader.vue';
 import pageFooter from '@/components/PageFooter.vue';
 
 export default {
-    name: 'app',
+    name: 'App',
     components: {
         tagline,
         navigationHeader,

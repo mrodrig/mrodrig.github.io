@@ -21,7 +21,7 @@ import { defineComponent } from 'vue';
 import pdf from 'pdfvuer';
 
 export default defineComponent({
-    name: 'pdf-viewer',
+    name: 'PdfViewer',
     components: {
         pdf,
     },

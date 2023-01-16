@@ -19,7 +19,7 @@ import PdfViewer from '@/components/PdfViewer.vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'resume-view',
+    name: 'ResumeView',
     components: {
         ArrowDownBoldBox,
         PdfViewer,

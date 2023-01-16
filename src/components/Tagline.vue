@@ -10,7 +10,7 @@ import { defineComponent } from 'vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'tagline-header',
+    name: 'TaglineHeader',
     data () {
         return {
             click: AnalyticsEvent.Click,

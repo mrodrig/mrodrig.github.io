@@ -9,7 +9,7 @@ import { defineComponent } from 'vue';
 import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
-    name: 'not-found',
+    name: 'NotFound',
     created () {
         // Log the route that the user tried to access
         Firebase.logEvent(AnalyticsEvent.NotFound, {

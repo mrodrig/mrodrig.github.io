@@ -90,5 +90,5 @@ export default class Projects {
             startDate: 'September 2017',
             endDate: 'December 2017',
         },
-    ]
+    ];
 }
