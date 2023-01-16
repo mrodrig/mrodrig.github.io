@@ -5,7 +5,7 @@
                 <template v-slot:loading>
                     <div class="center">
                         <p>Please wait, loading...</p>
-                        <img id="loading" src="../assets/spinner-icon.gif" alt="Loading icon">
+                        <img id="loading" src="@/assets/spinner-icon.gif" alt="Loading icon">
                     </div>
                 </template>
             </pdf>
@@ -17,9 +17,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import pdf from 'pdfvuer';
 
-export default {
+export default defineComponent({
     name: 'pdf-viewer',
     components: {
         pdf,
@@ -58,11 +59,11 @@ export default {
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less" scoped>
-    @import "../less/constants.less";
+    @import '@/less/constants.less';
 
     #resume {
         padding-top: 1em;

@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import project from '../components/Project.vue';
-import projects from '../data/projects';
+import project from '@/components/Project.vue';
+import projects from '@/data/projects';
 
 export default {
     name: 'projects-view',
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #projects {
         margin: 0 2em;

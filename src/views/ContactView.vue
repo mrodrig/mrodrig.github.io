@@ -33,45 +33,35 @@
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
+
+export default defineComponent({
     name: 'contact-view',
-    props: {},
     data () {
         return {
-            sendFromEmailAddress: 'contact@michaelrodrigues.com',
-            name: '',
-            replyTo: '',
-            subject: '',
             destinationEmailAddress: 'rodrigues.mi@northeastern.edu',
         };
     },
     computed: {
-        from: function () {
-            return (this.name || '') + ' <' + this.sendFromEmailAddress + '>';
-        },
-        // destination: function () {
-        //     return 'https://' + this.username + ':' + this.keyp0 + this.keyp1 + '@' + this.api;
-        // },
-        mailTo: function () {
-            return `mailto:${this.destinationEmailAddress}?subject=${this.subject}`;
+        mailTo: function (): string {
+            return `mailto:${this.destinationEmailAddress}`;
         },
     },
     methods: {
-        trackClick: function (item) {
-            console.log(item);
-            this.$gtag.event('click', {
-                event_category: 'contact',
-                event_label: item,
-                value: item,
+        trackClick: function (item: string) {
+            Firebase.logEvent(AnalyticsEvent.Click, {
+                component: 'contact',
+                item,
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #contact {
         padding: 2em 0;

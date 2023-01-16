@@ -24,17 +24,17 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/photography',
         name: 'photography',
-        component: () => import(/* webpackChunkName: "photography" */ '../views/PhotographyView.vue'),
+        component: () => import(/* webpackChunkName: "photography" */ '@/views/PhotographyView.vue'),
     },
     {
         path: '/contact',
         name: 'contact',
-        component: () => import(/* webpackChunkName: "contact" */ '../views/ContactView.vue'),
+        component: () => import(/* webpackChunkName: "contact" */ '@/views/ContactView.vue'),
     },
     {
         path: '/:catchAll(.*)*',
         name: 'notFound',
-        component: () => import(/* webpackChunkName: "notFound" */ '../views/NotFoundView.vue'),
+        component: () => import(/* webpackChunkName: "notFound" */ '@/views/NotFoundView.vue'),
     },
 ];
 

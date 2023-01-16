@@ -46,7 +46,7 @@ export default defineComponent({
         };
     },
     methods: {
-        trackClick: function (iconType) {
+        trackClick: function (iconType: string) {
             Firebase.logEvent(AnalyticsEvent.Click, {
                 component: 'footer',
                 target: iconType,
@@ -57,7 +57,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #footer {
         margin-top: 2em;

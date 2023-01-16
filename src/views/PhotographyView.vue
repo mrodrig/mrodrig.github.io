@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #photography {
         margin: 0 2em;

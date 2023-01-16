@@ -15,7 +15,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
-import PdfViewer from '../components/PdfViewer.vue';
+import PdfViewer from '@/components/PdfViewer.vue';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
     name: 'resume-view',
@@ -31,12 +32,10 @@ export default defineComponent({
     },
     methods: {
         trackClick: function (downloadType: string) {
-            console.log(downloadType);
-            // this.$gtag.event('download', {
-            //     event_category: 'resume',
-            //     event_label: downloadType,
-            //     value: downloadType,
-            // });
+            Firebase.logEvent(AnalyticsEvent.Download, {
+                component: 'resume',
+                downloadType,
+            });
         },
 
     },
@@ -44,7 +43,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-    @import "../less/constants.less";
+    @import '@/less/constants.less';
 
     #resume {
         padding-top: 1em;

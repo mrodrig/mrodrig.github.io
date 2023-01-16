@@ -6,16 +6,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
     name: 'not-found',
     created () {
         // Log the route that the user tried to access
-        // this.$gtag.event('not-found', {
-        //     event_category: 'navigation',
-        //     event_label: this.$route.path,
-        //     value: this.$route.path,
-        // });
+        Firebase.logEvent(AnalyticsEvent.NotFound, {
+            route: this.$route.path,
+        });
     },
 });
 </script>

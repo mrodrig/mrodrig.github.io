@@ -29,10 +29,12 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
-export default {
+export default defineComponent({
     name: 'project-details',
     components: {
         OpenInNewIcon,
@@ -65,19 +67,18 @@ export default {
         },
     },
     methods: {
-        trackClick: function (projectName) {
-            this.$gtag.event('click', {
-                event_category: 'projects',
-                event_label: projectName,
-                value: projectName,
+        trackClick: function (projectName: string) {
+            Firebase.logEvent(AnalyticsEvent.Click, {
+                component: 'project',
+                projectName,
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     .project {
         .project-title {

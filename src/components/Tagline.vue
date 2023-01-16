@@ -1,19 +1,24 @@
 <template>
     <div id="tagline">
-        <h1><a href="#" v-on:click="trackEvent('click')" v-on:mouseover="trackEvent('hover')">Michael Rodrigues</a></h1>
+        <h1><a href="#" v-on:click="trackEvent(click)" v-on:mouseover="trackEvent(hover)">Michael Rodrigues</a></h1>
         <p id="secondary">Lead Mobile Architect, Web Applications Developer, and Cybersecurity Professional</p>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
-import Firebase from '@/services/firebase';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
 export default defineComponent({
     name: 'tagline-header',
-    props: {},
+    data () {
+        return {
+            click: AnalyticsEvent.Click,
+            hover: AnalyticsEvent.Hover,
+        };
+    },
     methods: {
-        trackEvent: function (event) {
+        trackEvent: function (event: AnalyticsEvent) {
             Firebase.logEvent(event, {
                 component: 'tagline',
                 target: 'name',
@@ -24,7 +29,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #tagline {
     text-align: center;

@@ -22,7 +22,6 @@ export default defineComponent({
     components: {
         MenuIcon,
     },
-    props: {},
     data () {
         return {
             navBarExpanded: false,
@@ -60,7 +59,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-    @import '../less/constants.less';
+    @import '@/less/constants.less';
 
     #nav {
         padding: 0;
