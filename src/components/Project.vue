@@ -32,7 +32,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
-import Firebase, { AnalyticsEvent } from '@/services/firebase';
+import Firebase from '@/services/firebase';
+import { AnalyticsEvent } from '@/models/analyticsEvents';
 
 export default defineComponent({
     name: 'ProjectDetails',

@@ -13,9 +13,10 @@
 </template>
 
 <script lang="ts">
-import Firebase, { AnalyticsEvent } from '@/services/firebase';
 import { defineComponent } from 'vue';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
+import Firebase from '@/services/firebase';
+import { AnalyticsEvent } from '@/models/analyticsEvents';
 
 export default defineComponent({
     name: 'NavigationHeader',

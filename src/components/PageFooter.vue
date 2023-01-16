@@ -27,7 +27,8 @@ import { defineComponent } from 'vue';
 import GithubCircle from 'vue-material-design-icons/Github.vue';
 import Linkedin from 'vue-material-design-icons/Linkedin.vue';
 import Email from 'vue-material-design-icons/Email.vue';
-import Firebase, { AnalyticsEvent } from '@/services/firebase';
+import Firebase from '@/services/firebase';
+import { AnalyticsEvent } from '@/models/analyticsEvents';
 
 export default defineComponent({
     name: 'PageFooter',

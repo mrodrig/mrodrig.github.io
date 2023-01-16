@@ -1,4 +1,5 @@
 /* eslint-disable */
+// From: https://github.com/robcresswell/vue-material-design-icons/issues/267#issuecomment-1353717579
 declare module 'vue-material-design-icons/*.vue' {
     import type { DefineComponent } from 'vue';
 

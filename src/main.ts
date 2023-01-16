@@ -1,12 +1,11 @@
 import { createApp } from 'vue';
 import Rollbar from 'rollbar';
+import config from '@/config';
 import Firebase from '@/services/firebase';
 import App from './App.vue';
 import router from './router';
 
 Firebase.isInitialized();
-
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 const app = createApp(App);
 
@@ -18,8 +17,8 @@ const rollbar = new Rollbar({
     accessToken: '6ed9137f753d4b539bfb5845a1e6d84d',
     captureUncaught: true,
     captureUnhandledRejections: true,
-    enabled: IS_PRODUCTION,
-    environment: process.env.NODE_ENV,
+    enabled: config.isProduction,
+    environment: config.environment,
     payload: {
         source_map_enabled: true,
     },

@@ -16,7 +16,8 @@
 import { defineComponent } from 'vue';
 import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
 import PdfViewer from '@/components/PdfViewer.vue';
-import Firebase, { AnalyticsEvent } from '@/services/firebase';
+import Firebase from '@/services/firebase';
+import { AnalyticsEvent } from '@/models/analyticsEvents';
 
 export default defineComponent({
     name: 'ResumeView',
