@@ -22,12 +22,14 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import GithubCircle from 'vue-material-design-icons/Github.vue';
 import Linkedin from 'vue-material-design-icons/Linkedin.vue';
 import Email from 'vue-material-design-icons/Email.vue';
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 
-export default {
+export default defineComponent({
     name: 'page-footer',
     components: {
         GithubCircle,
@@ -45,14 +47,13 @@ export default {
     },
     methods: {
         trackClick: function (iconType) {
-            this.$gtag.event('click', {
-                event_category: 'footer',
-                event_label: iconType,
-                value: iconType,
+            Firebase.logEvent(AnalyticsEvent.Click, {
+                component: 'footer',
+                target: iconType,
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less">

@@ -6,19 +6,21 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+import Firebase from '@/services/firebase';
+
+export default defineComponent({
     name: 'tagline-header',
     props: {},
     methods: {
         trackEvent: function (event) {
-            this.$gtag.event(event, {
-                event_category: 'tagline',
-                event_label: 'name',
-                value: event,
+            Firebase.logEvent(event, {
+                component: 'tagline',
+                target: 'name',
             });
         },
     },
-};
+});
 </script>
 
 <style lang="less">

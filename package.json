@@ -15,7 +15,6 @@
     "pdfvuer": "^2.0.1",
     "rollbar": "^2.26.1",
     "vue": "^3.2.13",
-    "vue-gtag": "^2.0.1",
     "vue-material-design-icons": "^5.1.2",
     "vue-router": "^4.0.3"
   },

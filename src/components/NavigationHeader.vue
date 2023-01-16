@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts">
+import Firebase, { AnalyticsEvent } from '@/services/firebase';
 import { defineComponent } from 'vue';
 import MenuIcon from 'vue-material-design-icons/Menu.vue';
 
@@ -38,7 +39,10 @@ export default defineComponent({
         toggleNavBar: function () {
             this.navBarExpanded = !this.navBarExpanded;
 
-            this.trackEvent('navigation', this.navBarExpanded ? 'collapse' : 'expand', 'navbar');
+            Firebase.logEvent(AnalyticsEvent.Click, {
+                component: 'navigation-header',
+                action: this.navBarExpanded ? 'collapse' : 'expand',
+            });
         },
         trackClick: function (route: string) {
             // Close mobile the nav bar if it is expanded and the user changes pages
@@ -46,14 +50,10 @@ export default defineComponent({
                 this.navBarExpanded = false;
             }
 
-            this.trackEvent('navigation', 'click', route);
-        },
-        trackEvent: function (category: string, action: string, label: string) {
-            // this.$gtag.event(action, {
-            //     event_category: category,
-            //     event_label: label,
-            //     value: action,
-            // });
+            Firebase.logEvent(AnalyticsEvent.Click, {
+                component: 'navigation-header',
+                route,
+            });
         },
     },
 });

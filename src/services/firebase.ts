@@ -13,13 +13,17 @@ const app = initializeApp({
 
 const analytics = getAnalytics(app);
 
-enum AnalyticsEvent {
-    Login = 'login',
+export enum AnalyticsEvent {
+    Click = 'click',
+    Download = 'download',
     GenerateLead = 'generate_lead',
+    Hover = 'hover',
+    Login = 'login',
+    NotFound = 'not_found',
     PageView = 'page_view',
     Search = 'search',
     SelectContent = 'select_content',
-    Share = 'share'
+    Share = 'share',
 }
 
 enum AnalyticsNavigationEvent {
@@ -27,6 +31,10 @@ enum AnalyticsNavigationEvent {
 }
 
 export default class Firebase {
+    static isInitialized () {
+        return true;
+    }
+
     static logEvent (event: AnalyticsEvent, additionalParams: Record<string, unknown>|null) {
         return logEvent(analytics, event as string, { ...additionalParams });
     }

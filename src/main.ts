@@ -1,9 +1,10 @@
 import { createApp } from 'vue';
 import Rollbar from 'rollbar';
-import VueGtag from 'vue-gtag';
 import Firebase from '@/services/firebase';
 import App from './App.vue';
 import router from './router';
+
+Firebase.isInitialized();
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -35,10 +36,4 @@ app.config.errorHandler = (error: unknown, vm, info) => {
     throw error;
 };
 
-app.use(router);
-
-app.use(VueGtag, {
-    config: { id: 'UA-135518236-1' },
-}, router);
-
-app.mount('#app');
+app.use(router).mount('#app');
