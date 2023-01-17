@@ -5,7 +5,7 @@ import Firebase from '@/services/firebase';
 import App from './App.vue';
 import router from './router';
 
-Firebase.isInitialized();
+Firebase.signInAnonymously();
 
 const app = createApp(App);
 
