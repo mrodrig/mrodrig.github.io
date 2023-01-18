@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const ProjectTypeEnum = z.enum(['NPM', 'Server', 'Course']);
+export const ProjectTypeEnum = z.enum(['Node', 'NPM', 'Server', 'Course']);
 
 export const ProjectSchema = z.object({
     type: ProjectTypeEnum,
@@ -11,5 +11,5 @@ export const ProjectSchema = z.object({
     endDate: z.string().optional().nullable().default(null),
 });
 
-export type ProjectTypeEnum = z.infer<typeof ProjectTypeEnum>;
+export type ProjectType = z.infer<typeof ProjectTypeEnum>;
 export type Project = z.infer<typeof ProjectSchema>;
