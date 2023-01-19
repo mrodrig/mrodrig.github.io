@@ -19,6 +19,8 @@
 
 <script lang="ts">
 import project from '@/components/Project.vue';
+import Firebase from '@/services/firebase';
+import { FirestoreCollection } from '@/models/firestoreCollections';
 import projects from '@/data/projects';
 
 export default {
@@ -28,10 +30,22 @@ export default {
     },
     data () {
         return {
+            projects: [],
+            error: false,
             npmProjects: projects.npmProjects,
             serverProjects: projects.serverProjects,
             courseProjects: projects.courseProjects,
         };
+    },
+    async created () {
+        try {
+            const docs = await Firebase.getDocsFromCollection(FirestoreCollection.Projects);
+            // this.projects = docs;
+            console.log('Documents', JSON.stringify(docs, null, 4));
+        } catch (error) {
+            // this.error = true;
+            console.error('Error getting projects', error);
+        }
     },
 };
 </script>
