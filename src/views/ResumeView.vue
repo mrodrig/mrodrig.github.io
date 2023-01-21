@@ -2,13 +2,13 @@
     <div id="resume" class="center">
         <div id="download">
             <div class="download-link">
-                <a :href="resumeSource" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
+                <a :href="resumeUrl" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
             </div>
             <!-- <div class="download-link">
                 <a :href="cvSource" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
             </div> -->
         </div>
-        <pdf-viewer :src="resumeSource" />
+        <pdf-viewer :src="resumeUrl" />
     </div>
 </template>
 
@@ -27,9 +27,13 @@ export default defineComponent({
     },
     data () {
         return {
-            resumeSource: 'pdf/resume.pdf',
-            cvSource: 'pdf/cv.pdf',
+            resumeUrl: '',
+            cvUrl: '',
         };
+    },
+    async created () {
+        this.resumeUrl = await Firebase.getResumeUrl();
+        this.cvUrl = await Firebase.getCiriculumVitaeUrl();
     },
     methods: {
         trackClick: function (downloadType: string) {

@@ -1,12 +1,9 @@
 <template>
-    <div id="resume" class="center">
+    <div id="resume" class="center" v-if="src">
         <div v-for="page in numPages" :id="page" :key="page">
             <pdf :page="page" :src="pdfData" :scale="scale" :resize="true" class="inline page">
                 <template v-slot:loading>
-                    <div class="center">
-                        <p>Please wait, loading...</p>
-                        <img id="loading" src="@/assets/spinner-icon.gif" alt="Loading icon">
-                    </div>
+                    <LoadingSpinner :loading="true" />
                 </template>
             </pdf>
             <div v-if="numPages > 1" class="center">
@@ -17,6 +14,7 @@
 </template>
 
 <script>
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import { defineComponent } from 'vue';
 import pdf from 'pdfvuer';
 
@@ -24,6 +22,7 @@ export default defineComponent({
     name: 'PdfViewer',
     components: {
         pdf,
+        LoadingSpinner,
     },
     props: {
         src: {

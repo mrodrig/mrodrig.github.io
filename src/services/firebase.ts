@@ -44,7 +44,12 @@ export default class Firebase {
 
     static async getResumeUrl () {
         const fileRef = ref(storage, 'pdfs/resume.pdf');
-        return await getDownloadURL(fileRef);
+        return getDownloadURL(fileRef);
+    }
+
+    static async getCiriculumVitaeUrl () {
+        const fileRef = ref(storage, 'pdfs/cv.pdf');
+        return getDownloadURL(fileRef);
     }
 
     static logEvent (event: AnalyticsEvent, additionalParams: Record<string, unknown>|undefined|null) {
