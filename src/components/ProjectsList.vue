@@ -25,7 +25,6 @@ import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import Project from '@/components/Project.vue';
 import Firebase from '@/services/firebase';
 import Logging from '@/services/logging';
-import { FirestoreCollection } from '@/models/firestoreCollections';
 import projects from '@/data/projects';
 
 export default defineComponent({
@@ -46,7 +45,7 @@ export default defineComponent({
     },
     async created () {
         try {
-            const docs = await Firebase.getDocsFromCollection(FirestoreCollection.Projects);
+            const docs = await Firebase.getProjects();
             this.loading = false;
             // this.projects = docs;
             console.log('Documents', JSON.stringify(docs, null, 4));

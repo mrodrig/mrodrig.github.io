@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics, logEvent } from 'firebase/analytics';
 import { getAuth, signInAnonymously, UserCredential } from 'firebase/auth';
-import { getFirestore, collection, query, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, query, orderBy, getDocs, CollectionReference, Query } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import config from '@/config';
 import Logging from '@/services/logging';
@@ -26,20 +26,10 @@ export default class Firebase {
             });
     }
 
-    static async getDocsFromCollection (collectionName: FirestoreCollection) {
-        const collectionRef = collection(firestore, collectionName as string);
-        const q = query(collectionRef);
-
-        // Attempt to pull the documents from the cache first, but if that fails then pull them from the server
-        try {
-            const querySnapshot = await getDocs(q);
-            const docs = querySnapshot.docs.map((doc) => doc.data());
-            Logging.debug(`Successfully retrieved documents for ${collectionName}`);
-            return docs;
-        } catch (error) {
-            Logging.error(`Error retrieving documents for ${collectionName}`, error);
-            return error;
-        }
+    static async getProjects () {
+        const collectionRef = collection(firestore, FirestoreCollection.Projects as string);
+        const q = query(collectionRef, orderBy('startDate'), orderBy('name'));
+        return getDocsFromCollection(collectionRef, q);
     }
 
     static async getResumeUrl () {
@@ -63,5 +53,17 @@ export default class Firebase {
             page,
             route,
         });
+    }
+}
+
+async function getDocsFromCollection (collectionRef: CollectionReference, q: Query) {
+    try {
+        const querySnapshot = await getDocs(q);
+        const docs = querySnapshot.docs.map((doc) => doc.data());
+        Logging.debug(`Successfully retrieved documents for ${collectionRef.path}`);
+        return docs;
+    } catch (error) {
+        Logging.error(`Error retrieving documents for ${collectionRef.path}`, error);
+        throw error;
     }
 }
