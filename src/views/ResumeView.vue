@@ -1,14 +1,20 @@
 <template>
     <div id="resume" class="center">
         <div id="download">
+
             <div class="download-link">
-                <a :href="resumeUrl" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
+                <span v-show="resumeError" class="error">Sorry! I'm having difficulty accessing my resume at this time. Please try again soon.</span>
+                <a v-show="!resumeError" :href="resumeUrl" target="_blank" rel="noopener" v-on:click="trackClick('resume')"><arrow-down-bold-box /> Résumé</a>
             </div>
-            <!-- <div class="download-link">
-                <a :href="cvSource" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
-            </div> -->
+
+            <div v-if="showCV" class="download-link">
+                <a v-show="!cvError" :href="cvUrl" target="_blank" rel="noopener" v-on:click="trackClick('cv')"><arrow-down-bold-box /> Curriculum Vitae (CV)</a>
+            </div>
+
         </div>
-        <pdf-viewer :src="resumeUrl" />
+
+        <pdf-viewer v-show="!resumeError" :src="resumeUrl" />
+
     </div>
 </template>
 
@@ -17,6 +23,7 @@ import { defineComponent } from 'vue';
 import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
 import PdfViewer from '@/components/PdfViewer.vue';
 import Firebase from '@/services/firebase';
+import Logging from '@/services/logging';
 import { AnalyticsEvent } from '@/models/analyticsEvents';
 
 export default defineComponent({
@@ -28,12 +35,28 @@ export default defineComponent({
     data () {
         return {
             resumeUrl: '',
+            resumeError: false,
+            showCV: false, // TODO(mrodrig): Convert to use remote config - https://firebase.google.com/docs/remote-config/get-started?platform=web
             cvUrl: '',
+            cvError: false,
         };
     },
     async created () {
-        this.resumeUrl = await Firebase.getResumeUrl();
-        this.cvUrl = await Firebase.getCiriculumVitaeUrl();
+        try {
+            this.resumeUrl = await Firebase.getResumeUrl();
+        } catch (error) {
+            Logging.error('Unable to get resume URL', error);
+            this.resumeError = true;
+        }
+
+        if (this.showCV) {
+            try {
+                this.cvUrl = await Firebase.getCiriculumVitaeUrl();
+            } catch (error) {
+                Logging.error('Unable to get CV URL', error);
+                this.cvError = true;
+            }
+        }
     },
     methods: {
         trackClick: function (downloadType: string) {
