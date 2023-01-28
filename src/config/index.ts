@@ -11,6 +11,10 @@ const envConfig = {
         appId: '1:373432819280:web:e8e60eb32087809d963b55',
         measurementId: 'G-ZMMLHPEPHM',
     },
+    filePaths: {
+        resume: 'pdfs/resume.pdf',
+        cv: 'pdfs/cv.pdf',
+    },
 };
 
 // If in the Development environment, swap any values out that need to be repointed

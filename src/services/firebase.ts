@@ -33,12 +33,12 @@ export default class Firebase {
     }
 
     static async getResumeUrl () {
-        const fileRef = ref(storage, 'pdfs/resume.pdf');
+        const fileRef = ref(storage, config.filePaths.resume);
         return getDownloadURL(fileRef);
     }
 
     static async getCiriculumVitaeUrl () {
-        const fileRef = ref(storage, 'pdfs/cv.pdf');
+        const fileRef = ref(storage, config.filePaths.resume);
         return getDownloadURL(fileRef);
     }
 
