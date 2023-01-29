@@ -2,7 +2,10 @@
     <div class="project">
         <div class="headline">
             <div class="name">
-                <a :href="project.url">{{project.name}}</a>
+                <a :href="project.url" target="_blank" rel="noopener">
+                    {{project.name}}
+                    <OpenInNewIcon />
+                </a>
             </div>
             <div class="type">{{project.type}}</div>
             <div class="dates">
@@ -28,9 +31,11 @@ import { computed } from 'vue';
 import OpenInNewIcon from 'vue-material-design-icons/OpenInNew.vue';
 import { Project } from '@/models/project';
 
-const props = defineProps<{
-    project: Project,
-}>();
+interface Props {
+    project: Project;
+}
+
+const props = defineProps<Props>();
 
 function convertDate (date: Date) {
     const month = date.toLocaleString('default', { month: 'long' });
@@ -62,7 +67,7 @@ const isDescriptionArray = computed(() => {
 
         .headline {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             flex-wrap: wrap;
             gap: .5em;
 
@@ -71,7 +76,7 @@ const isDescriptionArray = computed(() => {
                     text-decoration: none;
                     color: @defaultTextColor;
                     font-weight: bold;
-                    font-size: 1.3em;
+                    font-size: 1.35em;
                     text-decoration: none;
                     transition: .3s;
 
@@ -85,6 +90,10 @@ const isDescriptionArray = computed(() => {
                 color: #909eac;
                 font-weight: bold;
                 font-style: italic;
+            }
+
+            .type, .dates {
+                padding-bottom: .15em;
             }
         }
     }
