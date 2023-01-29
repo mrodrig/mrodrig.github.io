@@ -104,7 +104,7 @@ const githubStarsBadgeUrl = computed(() => {
                     text-decoration: none;
                     color: @defaultTextColor;
                     font-weight: bold;
-                    font-size: 1.35em;
+                    font-size: @contentHeading;
                     text-decoration: none;
                     transition: .3s;
 
