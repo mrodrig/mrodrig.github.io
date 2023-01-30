@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ArrowDownBoldBox from 'vue-material-design-icons/ArrowDownBoldBox.vue';
-import PdfViewer from '@/components/PdfViewer.vue';
+import PdfViewer from '@/components/utility/PdfViewer.vue';
 import Firebase from '@/services/firebase';
 import Logging from '@/services/logging';
 import { AnalyticsEvent } from '@/models/analyticsEvents';

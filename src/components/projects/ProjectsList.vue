@@ -26,9 +26,9 @@
 import { defineComponent } from 'vue';
 import SortDescendingIcon from 'vue-material-design-icons/SortDescending.vue';
 import SortAscendingIcon from 'vue-material-design-icons/SortAscending.vue';
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import LoadingSpinner from '@/components/utility/LoadingSpinner.vue';
 import { ProjectSchema, Project } from '@/models/project';
-import ProjectHighlight from '@/components/ProjectHighlight.vue';
+import ProjectHighlight from '@/components/projects/ProjectHighlight.vue';
 import Firebase from '@/services/firebase';
 import Logging from '@/services/logging';
 

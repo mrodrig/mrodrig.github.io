@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import LoadingSpinner from '@/components/utility/LoadingSpinner.vue';
 import { defineComponent } from 'vue';
 import pdf from 'pdfvuer';
 

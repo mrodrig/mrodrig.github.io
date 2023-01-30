@@ -8,9 +8,9 @@
 </template>
 
 <script lang="ts">
-import tagline from '@/components/Tagline.vue';
-import navigationHeader from '@/components/NavigationHeader.vue';
-import pageFooter from '@/components/PageFooter.vue';
+import tagline from '@/components/header/Tagline.vue';
+import navigationHeader from '@/components/header/NavigationHeader.vue';
+import pageFooter from '@/components/footer/PageFooter.vue';
 
 export default {
     name: 'App',
