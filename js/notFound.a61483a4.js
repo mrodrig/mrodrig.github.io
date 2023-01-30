@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmrodrig_github_io"]=self["webpackChunkmrodrig_github_io"]||[]).push([[449],{1216:function(t,n,o){o.r(n),o.d(n,{default:function(){return g}});var r=o(3396);const u={id:"not-found"},e=(0,r._)("h2",null,"404 - Sorry, that page wasn't found.",-1),i=[e];function a(t,n,o,e,a,d){return(0,r.wg)(),(0,r.iD)("div",u,i)}var d=o(4579),s=o(9978),c=(0,r.aZ)({name:"NotFound",created(){d.Z.logEvent(s.s.NotFound,{route:this.$route.path})}}),h=o(89);const f=(0,h.Z)(c,[["render",a]]);var g=f}}]);
+//# sourceMappingURL=notFound.a61483a4.js.map
