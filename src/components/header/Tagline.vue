@@ -35,6 +35,9 @@ export default defineComponent({
     #tagline {
     text-align: center;
     background-color: #f4f4f4;
+    background-image: url('@/assets/header-background.jpg');
+    background-position: 50% 45%;
+    background-size: cover;
 
     h1 {
         padding-top: 1em;
@@ -50,6 +53,12 @@ export default defineComponent({
                 color: @lightblue;
             }
         }
+    }
+
+    #secondary {
+        color: white;
+        font-weight: 900;
+        font-size: 1em;
     }
 
     p {
