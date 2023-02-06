@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "mrodrig-dev",
+    "development": "mrodrig-dev",
+    "production": "mrodrig-prod"
+  }
+}
