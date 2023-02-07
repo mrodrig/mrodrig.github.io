@@ -1,9 +1,9 @@
-name: Build and Deploy
+name: Frontend
 on: [push]
 permissions:
   contents: write
 jobs:
-  build-and-deploy:
+  build:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
@@ -16,6 +16,27 @@ jobs:
           npm ci
           npm run lint
           npm run build
+
+      - name: Upload Build Artifacts 💾
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          retention-days: 3
+          path: |
+            frontend/dist
+
+  
+  deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    environment:
+      name: Production-manual
+      url: https://mrodrig.github.io
+    steps:
+      - name: Download Build Artifacts 🛎️
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
