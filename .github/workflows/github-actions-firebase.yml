@@ -4,6 +4,7 @@ jobs:
   firebase-deploy:
     concurrency: ${{ github.workflow }}-${{ github.ref }}
     runs-on: ubuntu-latest
+    needs: []
     environment:
       name: Production-manual
       url: https://mrodrig.github.io
