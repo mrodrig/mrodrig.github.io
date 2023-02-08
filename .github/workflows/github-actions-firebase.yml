@@ -18,22 +18,22 @@ jobs:
           cd firebase
           npm install --location=global firebase-tools
 
-      - name: Configure Credentials 🔐
+      - name: Configure Variables and Credentials 🔐
         env:
           GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
           GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          PROJECT_ENVIRONMENT: ${{ vars.ENVIRONMENT }}
         run: |
           export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
           echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo "PROJECT_ENVIRONMENT=$PROJECT_ENVIRONMENT" >> $GITHUB_ENV
           echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
 
       - name: Deploy 🚀
         run: |
-          echo $GOOGLE_APPLICATION_CREDENTIALS
-          ls -la $GOOGLE_APPLICATION_CREDENTIALS
           cd firebase
-          firebase use $ENVIRONMENT
-          firebase deploy --project=$ENVIRONMENT
+          firebase use $PROJECT_ENVIRONMENT
+          firebase deploy
 
   deploy-prod:
     concurrency: 
@@ -53,19 +53,19 @@ jobs:
           cd firebase
           npm install --location=global firebase-tools
 
-      - name: Configure Credentials 🔐
+      - name: Configure Variables and Credentials 🔐
         env:
           GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
           GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          PROJECT_ENVIRONMENT: ${{ vars.ENVIRONMENT }}
         run: |
           export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
           echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo "PROJECT_ENVIRONMENT=$PROJECT_ENVIRONMENT" >> $GITHUB_ENV
           echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
 
       - name: Deploy 🚀
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           cd firebase
-          firebase use $ENVIRONMENT
+          firebase use $PROJECT_ENVIRONMENT
           firebase deploy
