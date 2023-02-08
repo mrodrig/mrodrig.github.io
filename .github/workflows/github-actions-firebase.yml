@@ -18,10 +18,19 @@ jobs:
           cd firebase
           npm install --location=global firebase-tools
 
-      - name: Deploy 🚀
+      - name: Configure Credentials 🔐
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
+          GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
+
+      - name: Deploy 🚀
+        run: |
+          echo $GOOGLE_APPLICATION_CREDENTIALS
+          ls -la $GOOGLE_APPLICATION_CREDENTIALS
           cd firebase
           firebase use $ENVIRONMENT
           firebase deploy --project=$ENVIRONMENT
@@ -43,6 +52,15 @@ jobs:
         run: |
           cd firebase
           npm install --location=global firebase-tools
+
+      - name: Configure Credentials 🔐
+        env:
+          GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
+          GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
 
       - name: Deploy 🚀
         env:
