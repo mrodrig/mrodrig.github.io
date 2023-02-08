@@ -21,6 +21,7 @@ jobs:
       - name: Deploy 🚀
         run: |
           cd firebase
+          firebase use $ENVIRONMENT
           firebase deploy --project=$ENVIRONMENT
 
   deploy-prod:
@@ -44,4 +45,5 @@ jobs:
       - name: Deploy 🚀
         run: |
           cd firebase
-          firebase deploy --project=$ENVIRONMENT
+          firebase use $ENVIRONMENT
+          firebase deploy
