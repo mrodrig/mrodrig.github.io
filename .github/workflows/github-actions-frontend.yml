@@ -1,0 +1,55 @@
+name: Frontend
+on: [push]
+permissions:
+  contents: write
+jobs:
+  build:
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          cd frontend
+          npm ci
+          npm run lint
+          npm run build
+
+      - name: Upload Build Artifacts 💾
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          retention-days: 3
+          path: |
+            frontend/dist
+
+  
+  deploy:
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    needs: [build]
+    environment:
+      name: Production-manual
+      url: https://mrodrig.github.io
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Download Build Artifacts 🛎️
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: frontend/dist
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: frontend/dist # The folder the action should deploy.
+          branch: master

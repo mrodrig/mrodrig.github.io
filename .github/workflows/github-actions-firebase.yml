@@ -1,0 +1,71 @@
+name: Firebase
+on: [push]
+jobs:
+  deploy-dev:
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    needs: []
+    environment:
+      name: Development
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install Firebase CLI 🔧
+        run: |
+          cd firebase
+          npm install --location=global firebase-tools
+
+      - name: Configure Variables and Credentials 🔐
+        env:
+          GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
+          GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          PROJECT_ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo "PROJECT_ENVIRONMENT=$PROJECT_ENVIRONMENT" >> $GITHUB_ENV
+          echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
+
+      - name: Deploy 🚀
+        run: |
+          cd firebase
+          firebase use $PROJECT_ENVIRONMENT
+          firebase deploy
+
+  deploy-prod:
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    needs: [deploy-dev]
+    environment:
+      name: Production-manual
+      url: https://mrodrig.github.io
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install Firebase CLI 🔧
+        run: |
+          cd firebase
+          npm install --location=global firebase-tools
+
+      - name: Configure Variables and Credentials 🔐
+        env:
+          GOOGLE_CREDENTIALS_FILENAME: ${{ vars.GOOGLE_CREDENTIALS_FILENAME }}
+          GOOGLE_CI_CREDENTIALS_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          PROJECT_ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/${GOOGLE_CREDENTIALS_FILENAME}"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS" >> $GITHUB_ENV
+          echo "PROJECT_ENVIRONMENT=$PROJECT_ENVIRONMENT" >> $GITHUB_ENV
+          echo $GOOGLE_CI_CREDENTIALS_KEY > $GOOGLE_APPLICATION_CREDENTIALS
+
+      - name: Deploy 🚀
+        run: |
+          cd firebase
+          firebase use $PROJECT_ENVIRONMENT
+          firebase deploy
