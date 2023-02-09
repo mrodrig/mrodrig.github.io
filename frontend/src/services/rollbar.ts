@@ -6,7 +6,7 @@ import config from '@/config';
  * This ensures it is available in the same way for every instance in your app.
  */
 export default new Rollbar({
-    accessToken: '6ed9137f753d4b539bfb5845a1e6d84d',
+    accessToken: config.rollbar.apiKey,
     captureUncaught: true,
     captureUnhandledRejections: true,
     enabled: config.isProduction,

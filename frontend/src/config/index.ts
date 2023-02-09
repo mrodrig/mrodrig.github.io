@@ -11,6 +11,9 @@ const envConfig = {
         appId: '1:373432819280:web:e8e60eb32087809d963b55',
         measurementId: 'G-ZMMLHPEPHM',
     },
+    rollbar: {
+        apiKey: '@@ROLLBAR_API_KEY@@',
+    },
     filePaths: {
         resume: 'pdfs/resume.pdf',
         cv: 'pdfs/cv.pdf',
