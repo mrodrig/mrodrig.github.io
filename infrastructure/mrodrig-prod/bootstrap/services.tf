@@ -1,0 +1,45 @@
+resource "google_project_service" "project" {
+  for_each = toset([
+    // These are all of the APIs enabled by default on Firebase projects:
+    "appenginereporting.googleapis.com",
+    "appengine.googleapis.com",
+    "bigquery.googleapis.com",
+    "bigquerymigration.googleapis.com",
+    "bigquerystorage.googleapis.com",
+    "datastore.googleapis.com",
+    "clouddebugger.googleapis.com",
+    "deploymentmanager.googleapis.com",
+    "firestore.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "pubsub.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "runtimeconfig.googleapis.com",
+    "storage-component.googleapis.com",
+    "storage.googleapis.com",
+    "firebasestorage.googleapis.com",
+    "testing.googleapis.com",
+    "cloudtrace.googleapis.com",
+    "fcmregistrations.googleapis.com",
+    "firebaseappdistribution.googleapis.com",
+    "fcm.googleapis.com",
+    "firebasedynamiclinks.googleapis.com",
+    "firebaseextensions.googleapis.com",
+    "firebasehosting.googleapis.com",
+    "firebaseinstallations.googleapis.com",
+    "firebase.googleapis.com",
+    "firebaseremoteconfig.googleapis.com",
+    "firebaseremoteconfigrealtime.googleapis.com",
+    "firebaserules.googleapis.com",
+    "cloudapis.googleapis.com",
+    "storage-api.googleapis.com",
+    "identitytoolkit.googleapis.com",
+    "mobilecrashreporting.googleapis.com",
+    "servicemanagement.googleapis.com",
+    "serviceusage.googleapis.com",
+    "securetoken.googleapis.com",
+  ])
+  project            = local.project_id
+  service            = each.key
+  disable_on_destroy = true
+}
