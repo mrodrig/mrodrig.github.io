@@ -1,5 +1,9 @@
 name: Frontend
-on: [push]
+on:
+  push:
+    paths:
+      # Only run jobs in this workflow if there are changes in the frontend directory
+      - 'frontend/**'
 permissions:
   contents: write
 jobs:
@@ -51,6 +55,8 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
+    # Only run this job if the changes are landing in the repository's default branch
+    if: github.ref == 'refs/heads/vue3'
     needs: [build]
     environment:
       name: Production-manual

@@ -1,5 +1,9 @@
 name: Firebase
-on: [push]
+on:
+  push:
+    paths:
+      # Only run jobs in this workflow if there are changes in the firebase directory
+      - 'firebase/**'
 jobs:
   deploy-dev:
     concurrency: 
@@ -40,6 +44,8 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
+    # Only run this job if the changes are landing in the repository's default branch
+    if: github.ref == 'refs/heads/vue3'
     needs: [deploy-dev]
     environment:
       name: Production-manual
