@@ -7,11 +7,15 @@
         </p>
 
         <p>
-            In my current role at MITRE, I have the opportunity to improve user experience by delivering a variety of internal applications which allow MITRE employees easy access to information regarding people, projects, and other information relevant to MITRE's mission. I continuously seek opportunities to identify security weaknesses in our web applications, configuration scripts, and processes in an effort to improve my team's security posture.
+            Most recently, I accepted a new position in April 2023 within the same department at MITRE as one of two department-wide architects and software engineers. In my latest role, I regularly work across the teams in the department to identify model architectures for applications as we progressively shift workloads to the cloud and collaborate with developers to help identify innovative solutions to challenges. Additionally, I work in conjunction with the other department-wide architect to Effectively, this position allows me to have a larger impact on the entire division's direction by leading development across the full stack, and collaborating with division management to deliver critical capabilities to MITRE’s global employees, sponsors, and partners.
         </p>
 
         <p>
-            In addition to my work responsibilities, I also maintain several open-source NodeJS modules on the Node Package Manager (NPM). Through these modules and my use of other open-source modules on NPM, I've become somewhat active in the open source community. I believe that it's not only an excellent way to improve the reusability of code, but it's also a way to give back to the open-source software community.
+            In addition to my regular responsibilities, cybersecurity is a subject that I'm extremely passionate about and something that I always incorporate in my work. Whether I'm designing a new cloud application architecture, writing code for a new project, or reviewing merge requests from colleagues, I continuously seek opportunities to identify security weaknesses in an effort to improve my team and department's security posture.
+        </p>
+
+        <p>
+            Outside of work, I also maintain several open-source NodeJS modules on the Node Package Manager (NPM). Through these modules and my use of other open-source modules on NPM, I've become somewhat active in the open source community. I believe that it's not only an excellent way to improve the reusability of code, but it's also a way to give back to the open-source software community.
         </p>
 
         <p>
