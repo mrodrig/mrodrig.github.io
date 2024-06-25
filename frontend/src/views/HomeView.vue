@@ -7,7 +7,7 @@
         </p>
 
         <p>
-            Most recently, I accepted a new position in April 2023 within the same department at MITRE as one of two department-wide architects and software engineers. In my latest role, I regularly work across the teams in the department to identify model architectures for applications as we progressively shift workloads to the cloud and collaborate with developers to help identify innovative solutions to challenges. Additionally, I work in conjunction with the other department-wide architect to Effectively, this position allows me to have a larger impact on the entire division's direction by leading development across the full stack, and collaborating with division management to deliver critical capabilities to MITRE’s global employees, sponsors, and partners.
+            Most recently, I accepted a new position in April 2023 within the same department at MITRE as one of two department-wide architects and software engineers. In my latest role, I regularly work across the teams in the department to identify model architectures for applications as we progressively shift workloads to the cloud and collaborate with developers to help identify innovative solutions to challenges. Additionally, I work in conjunction with the other department-wide architect to ensure we're working towards building efficient, effective, and scalable software that will achieve MITRE's mission as we shift to the cloud. Effectively, this position allows me to have a larger impact on the entire division's direction by leading development across the full stack, and collaborating with division management to deliver critical capabilities to MITRE’s global employees, sponsors, and partners.
         </p>
 
         <p>
